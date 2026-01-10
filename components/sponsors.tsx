@@ -1,3 +1,7 @@
+"use client"
+
+import { Carousel } from "./carousel"
+
 export default function Sponsors() {
   const tiers = [
     {
@@ -29,33 +33,37 @@ export default function Sponsors() {
     },
   ]
 
+  const tierCards = tiers.map((tier, i) => (
+    <div
+      key={i}
+      className="p-6 rounded-lg border border-border bg-card/50 hover:bg-card hover:border-accent/50 transition-all duration-300 animate-fade-in h-full"
+      style={{ animationDelay: `${i * 0.1}s` }}
+    >
+      <div
+        className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-4 bg-gradient-to-r ${tier.color} text-white`}
+      >
+        {tier.title}
+      </div>
+      <ul className="space-y-2">
+        {tier.benefits.map((benefit, j) => (
+          <li key={j} className="text-sm text-foreground/80 flex items-start">
+            <span className="text-primary mr-2">✓</span>
+            {benefit}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))
+
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card/20 border-y border-border">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center">Sponsorship Opportunities</h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tiers.map((tier, i) => (
-            <div
-              key={i}
-              className="p-6 rounded-lg border border-border bg-card/50 hover:bg-card hover:border-accent/50 transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              <div
-                className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-4 bg-gradient-to-r ${tier.color} text-white`}
-              >
-                {tier.title}
-              </div>
-              <ul className="space-y-2">
-                {tier.benefits.map((benefit, j) => (
-                  <li key={j} className="text-sm text-foreground/80 flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">{tierCards}</div>
+
+        <div className="md:hidden">
+          <Carousel items={tierCards} itemsPerView={1} />
         </div>
 
         <div className="mt-12 p-8 rounded-lg border border-accent/50 bg-accent/5 text-center">

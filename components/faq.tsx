@@ -29,21 +29,6 @@ const faqs = [
     answer:
       "Bring your laptop, charger, and team! You can register individually or with a team. If joining solo, you can find teammates at the event or during pre-event team formation.",
   },
-  {
-    question: "Are there prizes and career opportunities?",
-    answer:
-      "Yes! Winners receive prizes, but more importantly, you get access to protocol foundations, investors, and ecosystem partners. Our goal is to transition at least 5% of participants into full-time Web3 roles, paid internships, or grant recipients within 6 months.",
-  },
-  {
-    question: "How do I register?",
-    answer:
-      "Use the registration form above. You'll need to provide your name and email. We'll send you event updates and details about workshops, mentors, and hackathon categories.",
-  },
-  {
-    question: "Is there a high school component?",
-    answer:
-      "Yes! BlockFest includes a High School Blockchain Tour (January-February 2026) at 3 STEM-focused schools. This creates a pipeline from high school → university → hackathon → Web3 careers.",
-  },
 ]
 
 export default function FAQ() {

@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="absolute inset-0 gradient-web3" />
 
       {/* Animated background elements with blockchain theme */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96  bg-primary/15 rounded-full blur-3xl animate-pulse" />
       <div
         className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/15 rounded-full blur-3xl animate-pulse"
         style={{ animationDelay: "1s" }}
@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="mb-8">
           <h1 className="text-6xl md:text-8xl font-black text-white mb-4 animate-slide-up leading-tight text-balance">
             <span className="block mb-2">Build the Future</span>
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-shimmer">
+            <span className="bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
               of Web3
             </span>
           </h1>

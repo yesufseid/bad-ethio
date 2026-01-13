@@ -82,10 +82,13 @@ export default function Header() {
               </a>
             ))}
             <div className="flex gap-2 pt-4">
-              <Button variant="outline" size="sm" className="flex-1 bg-transparent">
+              <Button variant="outline" size="sm" className="flex-1 bg-transparent" onClick={() => (window.location.href = "#community")}>
                 Join Community
               </Button>
-              <Button size="sm" className="flex-1 bg-primary">
+              <Button size="sm" className="flex-1 bg-primary" onClick={() => {
+                setIsOpen(false);
+                window.location.href = "#register";
+              }}>
                 Register
               </Button>
             </div>

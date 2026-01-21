@@ -1,7 +1,6 @@
 import { CheckCircle2 } from "lucide-react"
 
 const events = [
-  { time: "Q4 2025", title: "Sponsor Outreach", description: "Finalize partnerships and ecosystem coordination" },
   {
     time: "January 2026",
     title: "High School Tour",
@@ -20,11 +19,6 @@ const events = [
     description: "Showcase projects to judges from protocol foundations",
   },
   { time: "Feb 3", title: "Awards Ceremony", description: "Winners announced for prizes, grants, and internships" },
-  {
-    time: "30 Days Post",
-    title: "Impact Report",
-    description: "Sponsor reports with conversion metrics and top talent data",
-  },
 ]
 
 export default function Timeline() {

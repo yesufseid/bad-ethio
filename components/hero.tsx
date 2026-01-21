@@ -44,24 +44,44 @@ export default function Hero() {
           innovators, builders, and visionaries collaborate to shape the decentralized future
         </p>
 
-        <div className="inline-block bg-card/50 backdrop-blur-sm border-glow rounded-xl p-8 mb-16 animate-fade-in">
-          <div className="flex flex-col md:flex-row gap-12 items-center justify-center">
-            <div>
+        <div className="w-full max-w-5xl bg-card/50 backdrop-blur-sm border-glow rounded-xl p-8 mb-16 animate-fade-in mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+
+            {/* Left Side - 50% */}
+            <div className="flex-1 text-center">
               <p className="text-xs text-muted-foreground mb-2 uppercase tracking-widest">Event Date</p>
               <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                March 15-17, 2025
+                Feb 27 - March 24, 2026
               </p>
             </div>
+
+            {/* Vertical Divider */}
             <div className="hidden md:block w-px h-16 bg-gradient-to-b from-transparent via-purple-500/50 to-transparent" />
-            <div>
+
+            {/* Right Side - 50% */}
+            <div className="flex-1 text-center">
               <p className="text-xs text-muted-foreground mb-2 uppercase tracking-widest">Location</p>
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Addis Ababa, Ethiopia
+              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-4 mb-6">
+                Addis Ababa Science and Technology University
               </p>
+              <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-purple-500/30 shadow-2xl group">
+                <div className="absolute inset-0 bg-purple-500/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10" />
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.9400582230473!2d38.8071784750642!3d8.885165391170506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b82a7e392203f%3A0xb05f440eacc98f9f!2sAddis%20Ababa%20Science%20and%20Technology%20University!5e0!3m2!1sen!2set!4v1769016012576!5m2!1sen!2set"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Event Location"
+                  className="filter contrast-125 brightness-90 grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
             </div>
+
           </div>
         </div>
-
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in">
           <Button
             size="lg"
@@ -82,20 +102,6 @@ export default function Hero() {
           </Button>
         </div>
 
-        <div className="relative mt-20 mb-8">
-          <div className="flex justify-center items-center gap-8 md:gap-12">
-            <div className="w-32 h-32 relative animate-float">
-              <Image
-                src="/blockfest-logo.png"
-                alt="Block Fest Logo"
-                width={128}
-                height={128}
-                className="w-full h-full object-contain drop-shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-
         <div className="grid grid-cols-3 gap-4 md:gap-8 mt-16 max-w-2xl mx-auto text-center">
           <div className="border border-purple-500/30 rounded-lg p-4 bg-purple-500/5 animate-glow-pulse">
             <p className="text-2xl md:text-3xl font-bold text-cyan-400">500+</p>
@@ -112,7 +118,7 @@ export default function Hero() {
             className="border border-purple-500/30 rounded-lg p-4 bg-purple-500/5 animate-glow-pulse"
             style={{ animationDelay: "2s" }}
           >
-            <p className="text-2xl md:text-3xl font-bold text-pink-400">3 Days</p>
+            <p className="text-2xl md:text-3xl font-bold text-pink-400">26 Days</p>
             <p className="text-xs text-muted-foreground mt-1">of Building</p>
           </div>
         </div>

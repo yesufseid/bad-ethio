@@ -20,17 +20,34 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 relative">
+            {/* Increased from w-10 to w-14 */}
+            <div className="w-14 h-14 relative flex items-center justify-center">
+
+              {/* 1. The White Hexagon Background */}
+              <div
+                /* 
+                   Increased translation from 2px to 3px to keep the 
+                   alignment consistent with the larger size 
+                */
+                className="absolute bg-white w-[60%] h-[60%] z-0 translate-x-[3px] -translate-y-[3px]"
+                style={{
+                  clipPath: "polygon(40% 30%, 90% 24%, 90% 72%, 50% 90%, 4% 70%, 8% 22%)"
+                }}
+              />
+
+              {/* 2. Your Logo */}
               <Image
                 src="/blockfest-logo.png"
                 alt="Block Fest Logo"
-                width={40}
-                height={40}
-                className="w-full h-full object-contain"
+                width={56} // Matches w-14
+                height={56} // Matches h-14
+                className="w-full h-full object-contain relative z-10"
               />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Block Fest
+
+            {/* I also bumped the text to text-2xl to match the larger logo */}
+            <span className="text-2xl font-bold bg-white bg-clip-text text-transparent">
+              BlockFest
             </span>
           </div>
 

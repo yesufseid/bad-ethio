@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
-import { toast } from "sonner" 
+import { toast } from "sonner"
 import { registerAction } from "@/app/actions/register"
 
 const formSchema = z.object({
@@ -49,7 +49,7 @@ const formSchema = z.object({
   linkedin: z.string().url("Enter a valid LinkedIn URL.").optional().or(z.literal("")),
 }).superRefine((data, ctx) => {
   if (data.university === "Other") {
-    if (!data.otherUniversity || !/^[A-Za-z\s]{5,50}$/.test(data.otherUniversity)) { 
+    if (!data.otherUniversity || !/^[A-Za-z\s]{5,50}$/.test(data.otherUniversity)) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: "Enter a valid university name (5-50 characters, alphabetic).",
@@ -145,131 +145,131 @@ export default function Registration() {
           ) : (
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              
-              {/* Personal Information */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-white">Personal Information</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <FormField
-                    control={form.control}
-                    name="fullName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Full Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Abebe Bikila" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="student@aau.edu.et" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
-                        <FormControl>
-                          <Input placeholder="+251..." {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                   <FormField
-                    control={form.control}
-                    name="year"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Year of Study</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select year" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="1">1st Year</SelectItem>
-                            <SelectItem value="2">2nd Year</SelectItem>
-                            <SelectItem value="3">3rd Year</SelectItem>
-                            <SelectItem value="4">4th Year</SelectItem>
-                            <SelectItem value="5">5th Year</SelectItem>
-                            <SelectItem value="masters">Masters</SelectItem>
-                            <SelectItem value="phd">PhD</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              </div>
-
-              {/* Academic Information */}
-              <div className="space-y-4">
-               <h3 className="text-xl font-semibold text-white">Academic Details</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                   <FormField
-                    control={form.control}
-                    name="university"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>University</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select university" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="Addis Ababa University">Addis Ababa University</SelectItem>
-                            <SelectItem value="Addis Ababa Science and Technology University">AASTU</SelectItem>
-                            <SelectItem value="Adama Science and Technology University">ASTU</SelectItem>
-                            <SelectItem value="Jimma University">Jimma University</SelectItem>
-                            <SelectItem value="Bahir Dar University">Bahir Dar University</SelectItem>
-                            <SelectItem value="Mekelle University">Mekelle University</SelectItem>
-                            <SelectItem value="Hawassa University">Hawassa University</SelectItem>
-                            <SelectItem value="Other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  {university === "Other" && (
+                {/* Personal Information */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-white">Personal Information</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
-                      name="otherUniversity"
+                      name="fullName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Specify University</FormLabel>
+                          <FormLabel>Full Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your university name" {...field} />
+                            <Input placeholder="Abebe Bikila" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                  )}
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email Address</FormLabel>
+                          <FormControl>
+                            <Input type="email" placeholder="student@aau.edu.et" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Phone Number</FormLabel>
+                          <FormControl>
+                            <Input placeholder="+251..." {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="year"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Year of Study</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select year" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="1">1st Year</SelectItem>
+                              <SelectItem value="2">2nd Year</SelectItem>
+                              <SelectItem value="3">3rd Year</SelectItem>
+                              <SelectItem value="4">4th Year</SelectItem>
+                              <SelectItem value="5">5th Year</SelectItem>
+                              <SelectItem value="masters">Masters</SelectItem>
+                              <SelectItem value="phd">PhD</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
                 </div>
-                
-                 <FormField
+
+                {/* Academic Information */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-white">Academic Details</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="university"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>University</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select university" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="Addis Ababa University">Addis Ababa University</SelectItem>
+                              <SelectItem value="Addis Ababa Science and Technology University">AASTU</SelectItem>
+                              <SelectItem value="Adama Science and Technology University">ASTU</SelectItem>
+                              <SelectItem value="Jimma University">Jimma University</SelectItem>
+                              <SelectItem value="Bahir Dar University">Bahir Dar University</SelectItem>
+                              <SelectItem value="Mekelle University">Mekelle University</SelectItem>
+                              <SelectItem value="Hawassa University">Hawassa University</SelectItem>
+                              <SelectItem value="Other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    {university === "Other" && (
+                      <FormField
+                        control={form.control}
+                        name="otherUniversity"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Specify University</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Enter your university name" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    )}
+                  </div>
+
+                  <FormField
                     control={form.control}
                     name="department"
                     render={({ field }) => (
@@ -282,180 +282,180 @@ export default function Registration() {
                       </FormItem>
                     )}
                   />
-              </div>
-
-               {/* Socials */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-white">Socials (Optional)</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <FormField
-                    control={form.control}
-                    name="github"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>GitHub Profile</FormLabel>
-                        <FormControl>
-                          <Input placeholder="https://github.com/..." {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="linkedin"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>LinkedIn Profile</FormLabel>
-                        <FormControl>
-                          <Input placeholder="https://linkedin.com/in/..." {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
                 </div>
-              </div>
 
-              {/* Participation Type */}
-               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-white">Participation</h3>
-                <FormField
-                  control={form.control}
-                  name="participationType"
-                  render={({ field }) => (
-                    <FormItem className="space-y-3">
-                      <FormLabel>How are you participating?</FormLabel>
-                      <FormControl>
-                        <RadioGroup
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                          className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-4"
-                        >
-                          <FormItem className="flex items-center space-x-3 space-y-0">
-                            <FormControl>
-                              <RadioGroupItem value="solo" />
-                            </FormControl>
-                            <FormLabel className="font-normal">
-                              Solo
-                            </FormLabel>
-                          </FormItem>
-                          <FormItem className="flex items-center space-x-3 space-y-0">
-                            <FormControl>
-                              <RadioGroupItem value="team" />
-                            </FormControl>
-                            <FormLabel className="font-normal">
-                              Team
-                            </FormLabel>
-                          </FormItem>
-                        </RadioGroup>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                {participationType === "team" && (
-                  <div className="space-y-4 p-4 border border-border rounded-lg bg-background/50">
+                {/* Socials */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-white">Socials (Optional)</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
-                      name="teamName"
+                      name="github"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Team Name</FormLabel>
+                          <FormLabel>GitHub Profile</FormLabel>
                           <FormControl>
-                            <Input placeholder="Crypto Warriors" {...field} />
+                            <Input placeholder="https://github.com/..." {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    <div className="space-y-2">
-                      <FormLabel>Team Members (Emails)</FormLabel>
+                    <FormField
+                      control={form.control}
+                      name="linkedin"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>LinkedIn Profile</FormLabel>
+                          <FormControl>
+                            <Input placeholder="https://linkedin.com/in/..." {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                </div>
+
+                {/* Participation Type */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-white">Participation</h3>
+                  <FormField
+                    control={form.control}
+                    name="participationType"
+                    render={({ field }) => (
+                      <FormItem className="space-y-3">
+                        <FormLabel>How are you participating?</FormLabel>
+                        <FormControl>
+                          <RadioGroup
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                            className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-4"
+                          >
+                            <FormItem className="flex items-center space-x-3 space-y-0">
+                              <FormControl>
+                                <RadioGroupItem value="solo" />
+                              </FormControl>
+                              <FormLabel className="font-normal">
+                                Solo
+                              </FormLabel>
+                            </FormItem>
+                            <FormItem className="flex items-center space-x-3 space-y-0">
+                              <FormControl>
+                                <RadioGroupItem value="team" />
+                              </FormControl>
+                              <FormLabel className="font-normal">
+                                Team
+                              </FormLabel>
+                            </FormItem>
+                          </RadioGroup>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  {participationType === "team" && (
+                    <div className="space-y-4 p-4 border border-border rounded-lg bg-background/50">
                       <FormField
                         control={form.control}
-                        name="teamMember1"
+                        name="teamName"
                         render={({ field }) => (
                           <FormItem>
+                            <FormLabel>Team Name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Member 1 Email" {...field} />
+                              <Input placeholder="Crypto Warriors" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
                         )}
                       />
-                       <FormField
-                        control={form.control}
-                        name="teamMember2"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormControl>
-                              <Input placeholder="Member 2 Email" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                       <FormField
-                        control={form.control}
-                        name="teamMember3"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormControl>
-                              <Input placeholder="Member 3 Email" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                      <div className="space-y-2">
+                        <FormLabel>Team Members (Emails)</FormLabel>
+                        <FormField
+                          control={form.control}
+                          name="teamMember1"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormControl>
+                                <Input placeholder="Member 1 Email" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="teamMember2"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormControl>
+                                <Input placeholder="Member 2 Email" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="teamMember3"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormControl>
+                                <Input placeholder="Member 3 Email" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
 
-              {/* Agreement */}
-              <FormField
-                control={form.control}
-                name="agreement"
-                render={({ field }) => (
-                  <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
-                    <FormControl>
-                      <Checkbox
-                        checked={field.value}
-                        onCheckedChange={field.onChange}
-                      />
-                    </FormControl>
-                    <div className="space-y-1 leading-none">
-                      <FormLabel>
-                        I agree to the terms and conditions.
-                      </FormLabel>
-                      <FormDescription>
-                        You agree to our Code of Conduct and Participation Rules.
-                      </FormDescription>
-                       <FormMessage />
-                    </div>
-                  </FormItem>
-                )}
-              />
+                {/* Agreement */}
+                <FormField
+                  control={form.control}
+                  name="agreement"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                      </FormControl>
+                      <div className="space-y-1 leading-none">
+                        <FormLabel>
+                          I agree to the terms and conditions.
+                        </FormLabel>
+                        <FormDescription>
+                          You agree to our Code of Conduct and Participation Rules.
+                        </FormDescription>
+                        <FormMessage />
+                      </div>
+                    </FormItem>
+                  )}
+                />
 
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group"
-                disabled={submitted}
-              >
-                {submitted ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Submitting...
-                  </>
-                ) : (
-                  <>
-                    Register Now
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </>
-                )}
-              </Button>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-linear-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:from-violet-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-bold cta-glow shadow-xl shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 border-none py-6 text-lg"
+                  disabled={submitted}
+                >
+                  {submitted ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Register Now
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
+                </Button>
               </form>
             </Form>
           )}

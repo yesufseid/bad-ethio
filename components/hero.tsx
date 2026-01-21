@@ -23,9 +23,9 @@ export default function Hero() {
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/50 mb-8 animate-fade-in animate-glow-pulse">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/50 mb-8 animate-fade-in animate-glow-pulse">
           <Zap size={16} className="text-cyan-400" />
-          <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+          <span className="text-sm bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold">
             Web3 Hackathon & Community Event
           </span>
         </div>
@@ -50,18 +50,18 @@ export default function Hero() {
             {/* Left Side - 50% */}
             <div className="flex-1 text-center">
               <p className="text-xs text-muted-foreground mb-2 uppercase tracking-widest">Event Date</p>
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <p className="text-3xl md:text-4xl font-bold bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 Feb 27 - March 24, 2026
               </p>
             </div>
 
             {/* Vertical Divider */}
-            <div className="hidden md:block w-px h-16 bg-gradient-to-b from-transparent via-purple-500/50 to-transparent" />
+            <div className="hidden md:block w-px h-16 bg-linear-to-b from-transparent via-purple-500/50 to-transparent" />
 
             {/* Right Side - 50% */}
             <div className="flex-1 text-center">
               <p className="text-xs text-muted-foreground mb-2 uppercase tracking-widest">Location</p>
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-4 mb-6">
+              <p className="text-3xl md:text-4xl font-bold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-4 mb-6">
                 Addis Ababa Science and Technology University
               </p>
               <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-purple-500/30 shadow-2xl group">
@@ -85,12 +85,12 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white px-10 py-6 text-lg font-bold group cta-glow shadow-2xl shadow-purple-500/50 border-2 border-purple-400/50"
+            className="bg-linear-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:from-violet-500 hover:via-indigo-500 hover:to-cyan-400 text-white px-10 py-6 text-xl font-black group cta-glow shadow-2xl shadow-indigo-500/40 hover:scale-105 active:scale-95 transition-all duration-300 border-none"
             onClick={() => (window.location.href = "#register")}
           >
-            <Rocket className="mr-2 w-5 h-5" />
+            <Rocket className="mr-2 w-6 h-6" />
             Register Now
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button
             size="lg"

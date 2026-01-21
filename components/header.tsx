@@ -73,7 +73,7 @@ export default function Header() {
               Join Community
             </Button>
             <Button
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold cta-glow shadow-lg shadow-purple-500/50"
+              className="bg-linear-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:from-violet-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-bold cta-glow shadow-lg shadow-indigo-500/40 hover:scale-105 active:scale-95 transition-all duration-300 border-none px-6"
               onClick={() => (window.location.href = "#register")}
             >
               Register Now
@@ -102,7 +102,7 @@ export default function Header() {
               <Button variant="outline" size="sm" className="flex-1 bg-transparent" onClick={() => (window.location.href = "#community")}>
                 Join Community
               </Button>
-              <Button size="sm" className="flex-1 bg-primary" onClick={() => {
+              <Button size="sm" className="flex-1 bg-linear-to-r from-violet-600 via-indigo-600 to-cyan-500 text-white font-bold border-none" onClick={() => {
                 setIsOpen(false);
                 window.location.href = "#register";
               }}>

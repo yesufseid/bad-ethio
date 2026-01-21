@@ -40,7 +40,7 @@ export default function Sponsors() {
       style={{ animationDelay: `${i * 0.1}s` }}
     >
       <div
-        className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-4 bg-gradient-to-r ${tier.color} text-white`}
+        className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-4 bg-linear-to-r ${tier.color} text-white`}
       >
         {tier.title}
       </div>

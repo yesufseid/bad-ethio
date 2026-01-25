@@ -1,6 +1,7 @@
 "use client"
 
 import { Carousel } from "./carousel"
+import Image from "next/image"
 
 export default function AboutClub() {
   const clubItems = [
@@ -12,28 +13,39 @@ export default function AboutClub() {
   const clubCards = clubItems.map((item, i) => (
     <div
       key={i}
-      className="p-6 rounded-lg border border-border bg-card/50 hover:bg-card transition-colors animate-fade-in h-full"
+      className="p-10 rounded-[2.5rem] border border-white/5 bg-neutral-900/30 backdrop-blur-3xl hover:bg-neutral-900/50 transition-all duration-500 animate-fade-in h-full shadow-2xl group hover:scale-[1.02]"
       style={{ animationDelay: `${i * 0.1}s` }}
     >
-      <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-      <p className="text-foreground/70">{item.description}</p>
+      <h3 className="text-3xl font-black text-white mb-6 group-hover:text-cyan-400 transition-colors tracking-tighter">{item.title}</h3>
+      <p className="text-foreground/40 text-xl font-light leading-relaxed">{item.description}</p>
     </div>
   ))
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About BaD Ethiopia</h2>
-          <p className="text-lg text-foreground/80 leading-relaxed text-balance">
+    <section id="about" className="relative py-40 px-4 sm:px-6 lg:px-8 overflow-hidden bg-background">
+      {/* Background Image Accent */}
+      <div className="absolute right-0 top-0 w-1/2 h-full z-0 opacity-10 pointer-events-none hidden lg:block translate-x-20">
+        <Image
+          src="https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/core_team_members.jpg"
+          alt="Team Background"
+          fill
+          className="object-cover grayscale"
+        />
+        <div className="absolute inset-0 bg-linear-to-l from-transparent via-background/10 to-background" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="mb-24 animate-fade-in max-w-4xl">
+          <h2 className="text-5xl md:text-8xl font-black text-white mb-10 leading-[0.9] tracking-tighter animate-slide-up">
+            About <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent italic">BaD Ethiopia</span>
+          </h2>
+          <p className="text-2xl md:text-3xl text-foreground/40 leading-tight text-balance font-light animate-fade-in tracking-tight" style={{ animationDelay: "0.2s" }}>
             BaD Ethiopia is a university-first Web3 ecosystem-building initiative designed to unlock, identify, and
-            accelerate the next generation of blockchain developers, builders, and founders in Ethiopia. We bridge the
-            gap between Web2 student developers and real Web3 opportunities, while creating a sustainable pipeline of
-            blockchain talent for the global Web3 ecosystem.
+            accelerate the next generation of blockchain developers, builders, and founders in Ethiopia.
           </p>
         </div>
 
-        <div className="hidden md:grid md:grid-cols-3 gap-6">{clubCards}</div>
+        <div className="hidden md:grid md:grid-cols-3 gap-8">{clubCards}</div>
 
         <div className="md:hidden">
           <Carousel items={clubCards} itemsPerView={1} />

@@ -1,93 +1,71 @@
-import { Twitter, Mail, Send } from "lucide-react"
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-card/50 border-t border-border py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="py-32 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">BF</span>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-4 mb-8 group cursor-default">
+              <div className="w-12 h-12 relative flex items-center justify-center transition-transform group-hover:rotate-12 duration-500">
+                <div
+                  className="absolute bg-white/10 w-full h-full z-0 rotate-15"
+                  style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}
+                />
+                <Image
+                  src="/BLOCKFEST-logo.png"
+                  alt="Logo"
+                  width={32}
+                  height={32}
+                  className="relative z-10 grayscale invert brightness-200"
+                />
               </div>
-              <span className="font-bold text-white">BlockFest Ethiopia</span>
+              <h2 className="text-4xl font-black text-white tracking-tighter italic">BLOCKFEST</h2>
             </div>
-            <p className="text-foreground/60 text-sm">
-              University Blockchain Week • Hackathon • Conference • Ecosystem Festival
+            <p className="text-foreground/40 text-xl font-light leading-relaxed max-w-sm mb-12">
+              The bridge between Web2 talent and the global Web3 ecosystem. Building the decentralized future of Ethiopia.
             </p>
+            <div className="flex gap-6">
+              {/* Social icons could go here */}
+              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors cursor-pointer">
+                <span className="text-white/40 text-xs">X</span>
+              </div>
+              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors cursor-pointer">
+                <span className="text-white/40 text-xs">TG</span>
+              </div>
+            </div>
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">About</h4>
-            <ul className="space-y-2 text-foreground/60 text-sm">
-              <li>
-                <a href="#event" className="hover:text-primary transition-colors">
-                  Event Details
-                </a>
-              </li>
-              <li>
-                <a href="#speakers" className="hover:text-primary transition-colors">
-                  Organizers
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-primary transition-colors">
-                  FAQs
-                </a>
-              </li>
+            <h4 className="text-white font-black uppercase tracking-[0.2em] text-xs mb-8">Navigation</h4>
+            <ul className="space-y-6">
+              <li><Link href="#about" className="text-foreground/40 hover:text-white transition-colors text-lg font-light">About</Link></li>
+              <li><Link href="#community" className="text-foreground/40 hover:text-white transition-colors text-lg font-light">Community</Link></li>
+              <li><Link href="#highlights" className="text-foreground/40 hover:text-white transition-colors text-lg font-light">Highlights</Link></li>
+              <li><Link href="#register" className="text-foreground/40 hover:text-white transition-colors text-lg font-light">Register</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Community</h4>
-            <ul className="space-y-2 text-foreground/60 text-sm">
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Discord
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Telegram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Twitter
-                </a>
-              </li>
+            <h4 className="text-white font-black uppercase tracking-[0.2em] text-xs mb-8">Legal</h4>
+            <ul className="space-y-6">
+              <li><span className="text-foreground/40 hover:text-white transition-colors text-lg font-light cursor-pointer">Privacy Policy</span></li>
+              <li><span className="text-foreground/40 hover:text-white transition-colors text-lg font-light cursor-pointer">Code of Conduct</span></li>
+              <li><span className="text-foreground/40 hover:text-white transition-colors text-lg font-light cursor-pointer">Media Kit</span></li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-white mb-4">Contact</h4>
-            <ul className="space-y-2 text-foreground/60 text-sm">
-              <li className="flex items-center gap-2">
-                <Mail size={16} />
-                <a href="mailto:hello@blockfest.eth" className="hover:text-primary transition-colors">
-                  hello@blockfest.eth
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div className="border-t border-border pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-foreground/60 text-sm">
-              © 2026 BlockFest Ethiopia. Organized by BaD Ethiopia & University Partners.
-            </p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-foreground/60 hover:text-primary transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-foreground/60 hover:text-primary transition-colors">
-                <Send size={20} />
-              </a>
-              <a href="#" className="text-foreground/60 hover:text-primary transition-colors">
-                <Mail size={20} />
-              </a>
-            </div>
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-white/20 text-xs font-black uppercase tracking-widest">© 2026 BaD Ethiopia. All rights reserved.</p>
+          <div className="flex gap-12 text-white/20 text-xs font-black uppercase tracking-widest">
+            <span>Built by builders for builders</span>
+            <span>Addis Ababa, Ethiopia</span>
           </div>
         </div>
       </div>

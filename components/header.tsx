@@ -1,14 +1,26 @@
 "use client"
 
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react"
+import { Menu, X, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
+import { motion, AnimatePresence } from "motion/react"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navItems = [
+    { label: "Community", href: "#community" },
     { label: "About", href: "#about" },
     { label: "Event", href: "#event" },
     { label: "Speakers", href: "#speakers" },
@@ -16,102 +28,123 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-3">
-            {/* Increased from w-10 to w-14 */}
-            <div className="w-14 h-14 relative flex items-center justify-center">
-
-              {/* 1. The White Hexagon Background */}
-              <div
-                /* 
-                   Increased translation from 2px to 3px to keep the 
-                   alignment consistent with the larger size 
-                */
-                className="absolute bg-white w-[60%] h-[60%] z-0 translate-x-[3px] -translate-y-[3px]"
-                style={{
-                  clipPath: "polygon(40% 30%, 90% 24%, 90% 72%, 50% 90%, 4% 70%, 8% 22%)"
-                }}
-              />
-
-              {/* 2. Your Logo */}
-              <Image
-                src="/blockfest-logo.png"
-                alt="Block Fest Logo"
-                width={56} // Matches w-14
-                height={56} // Matches h-14
-                className="w-full h-full object-contain relative z-10"
-              />
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-100 transition-all duration-500 ease-in-out ${scrolled ? "py-4" : "py-6"
+          }`}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div
+            className={`relative flex items-center justify-between transition-all duration-500 rounded-full border border-white/5 px-6 md:px-8 overflow-hidden backdrop-blur-3xl shadow-2xl ${scrolled ? "h-14 bg-black/40" : "h-16 bg-black/20"
+              }`}
+          >
+            {/* Logo Section */}
+            <div className="flex items-center gap-3">
+              <Link href="/" className="flex items-center gap-3 group">
+                <div className="relative flex items-center justify-center">
+                  <div className="absolute inset-0 bg-white/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                  <Image
+                    src="/BLOCKFEST-logo.png"
+                    alt="Logo"
+                    width={28}
+                    height={28}
+                    className="relative z-10 grayscale invert brightness-200 transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xs font-black tracking-[0.4em] text-white uppercase leading-none">
+                    BLOCKFEST
+                  </span>
+                  <span className="text-[7px] font-black tracking-[0.6em] text-white/20 uppercase mt-1">
+                    ETHIOPIA
+                  </span>
+                </div>
+              </Link>
             </div>
 
-            {/* I also bumped the text to text-2xl to match the larger logo */}
-            <span className="text-2xl font-bold bg-white bg-clip-text text-transparent">
-              BlockFest
-            </span>
-          </div>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-10">
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-[10px] font-black tracking-[0.25em] text-white/50 hover:text-white transition-all duration-300 uppercase relative group"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-white/20 transition-all duration-300 group-hover:w-full" />
+                </a>
+              ))}
+            </nav>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-sm text-foreground hover:text-primary transition-colors"
+            {/* Action Section */}
+            <div className="flex items-center gap-6">
+              <div className="hidden lg:flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
+                <span className="text-[10px] font-black text-white/30 uppercase tracking-widest">Live 2026</span>
+              </div>
+
+              <Link href="#register">
+                <Button
+                  size="sm"
+                  className="h-10 px-6 rounded-full bg-white text-black hover:bg-neutral-200 font-black text-[10px] tracking-widest uppercase transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)] border-none"
+                >
+                  Register
+                  <ChevronRight size={10} className="ml-1" />
+                </Button>
+              </Link>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                onClick={() => setIsOpen(!isOpen)}
               >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="hidden md:flex gap-4">
-            <Button
-              variant="outline"
-              className="border-border text-foreground hover:bg-muted bg-transparent"
-              onClick={() => (window.location.href = "#community")}
-            >
-              Join Community
-            </Button>
-            <Button
-              className="bg-linear-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:from-violet-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-bold cta-glow shadow-lg shadow-indigo-500/40 hover:scale-105 active:scale-95 transition-all duration-300 border-none px-6"
-              onClick={() => (window.location.href = "#register")}
-            >
-              Register Now
-            </Button>
+                {isOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
+      </header>
 
-        {/* Mobile Navigation */}
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
         {isOpen && (
-          <nav className="md:hidden pb-4 space-y-2">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="block text-sm text-foreground hover:text-primary transition-colors py-2"
+          <motion.div
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(40px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            className="fixed inset-0 z-90 bg-black/60 flex flex-col items-center justify-center"
+          >
+            <nav className="flex flex-col items-center gap-12 text-center">
+              {navItems.map((item, i) => (
+                <motion.a
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-3xl md:text-5xl font-black text-white/40 hover:text-white transition-all tracking-tighter"
+                >
+                  {item.label}
+                </motion.a>
+              ))}
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5 }}
+                className="pt-12"
               >
-                {item.label}
-              </a>
-            ))}
-            <div className="flex gap-2 pt-4">
-              <Button variant="outline" size="sm" className="flex-1 bg-transparent" onClick={() => (window.location.href = "#community")}>
-                Join Community
-              </Button>
-              <Button size="sm" className="flex-1 bg-linear-to-r from-violet-600 via-indigo-600 to-cyan-500 text-white font-bold border-none" onClick={() => {
-                setIsOpen(false);
-                window.location.href = "#register";
-              }}>
-                Register
-              </Button>
-            </div>
-          </nav>
+                <Link href="#register" onClick={() => setIsOpen(false)}>
+                  <Button size="lg" className="h-20 px-16 rounded-full bg-white text-black text-xl font-black shadow-2xl">
+                    Register Now
+                  </Button>
+                </Link>
+              </motion.div>
+            </nav>
+          </motion.div>
         )}
-      </div>
-    </header>
+      </AnimatePresence>
+    </>
   )
 }

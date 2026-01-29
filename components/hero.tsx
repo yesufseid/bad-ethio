@@ -61,8 +61,8 @@ export default function Hero() {
                 className="object-contain p-0.5"
               />
             </div>
-            <span className="text-[10px] text-white/60 font-black tracking-[0.2em] uppercase group-hover:text-white transition-colors">
-              BaD Ethiopia
+            <span className="text-[10px] text-white/60 font-black tracking-[0.2em] group-hover:text-white transition-colors">
+              BaD ETHIOPIA
             </span>
           </a>
         </div>

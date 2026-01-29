@@ -62,7 +62,7 @@ export default function BentoGrid() {
                                         {/* Core Members Tile */}
                                         <div className="md:col-span-1 md:row-span-1 relative group rounded-[3rem] overflow-hidden border border-white/5 bg-neutral-950/50 backdrop-blur-3xl shadow-2xl">
                                                 <Image
-                                                        src="https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/core_team_members.jpg"
+                                                        src="https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/core_team_members_2.jpg?updatedAt=1769371906280"
                                                         alt="Team"
                                                         fill
                                                         className="object-cover group-hover:scale-110 transition-transform duration-[3s] opacity-30"

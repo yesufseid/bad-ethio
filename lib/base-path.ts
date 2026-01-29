@@ -4,7 +4,7 @@ const normalizeBasePath = (value: string) => {
   return value.startsWith("/") ? value.replace(/\/$/, "") : `/${value}`
 }
 
-export const BASE_PATH = normalizeBasePath(process.env.NEXT_PUBLIC_BASE_PATH ?? "")
+export const BASE_PATH =  normalizeBasePath(process.env.NEXT_PUBLIC_BASE_PATH ?? "")
 
 export const withBasePath = (path: string) => {
   if (!path) return BASE_PATH || "/"

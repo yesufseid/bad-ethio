@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
         <div className="relative w-[150%] h-[150%] opacity-15 grayscale brightness-50 blur-3xl scale-110 animate-pulse-slow">
           <Image
-            src="/blockfest-logo.png"
+            src="/blockfest-logo.jpg"
             alt="Blockfest Background"
             fill
             className="object-contain"
@@ -32,7 +32,7 @@ export default function Hero() {
 
             <div className="relative w-10 h-10 md:w-16 md:h-16">
               <Image
-                src="/blockfest-logo.png"
+                src="/blockfest-logo.jpg"
                 alt="Blockfest Logo"
                 fill
                 sizes="(max-width: 768px) 40px, 64px"

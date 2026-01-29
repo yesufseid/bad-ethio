@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="flex items-center gap-4 mb-8 group cursor-default">
               <div className="w-12 h-12 relative flex items-center justify-center transition-transform group-hover:rotate-12 duration-500 bg-white/5 rounded-xl border border-white/10">
                 <Image
-                  src="/blockfest-logo.png"
+                  src="/blockfest-logo.jpg"
                   alt="Logo"
                   width={32}
                   height={32}

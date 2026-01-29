@@ -61,7 +61,7 @@ export default function Header() {
                 <div className="relative flex items-center justify-center">
                   <div className="absolute inset-0 bg-white/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
                   <Image
-                    src="/blockfest-logo.png"
+                    src="/blockfest-logo.jpg"
                     alt="Logo"
                     width={32}
                     height={32}

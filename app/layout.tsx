@@ -1,15 +1,28 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Plus_Jakarta_Sans, Syne } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+})
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  weight: ["400", "500", "600", "700", "800"],
+})
 
 export const metadata: Metadata = {
-  title: "Bad Ethiopia Web3 Hackathon",
-  description: "Empowering Ethiopian builders to learn, build, and innovate in Web3",
+  title: "Blockfest Ethiopia 2026",
+  description: "University Blockchain Week · Hackathon · Conference · Ecosystem Festival in Addis Ababa, Ethiopia.",
+  icons: {
+    icon: "/bad-ethiopia.jpg",
+    apple: "/bad-ethiopia.jpg",
+  },
 }
 
 export default function RootLayout({
@@ -19,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`font-sans antialiased`}>
+      <body className={`${jakarta.variable} ${syne.variable} font-sans antialiased text-white bg-black`}>
         {children}
         <Analytics />
       </body>

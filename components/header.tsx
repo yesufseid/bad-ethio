@@ -10,19 +10,35 @@ import { motion, AnimatePresence } from "motion/react"
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const currentScrollY = window.scrollY
+
+      // Update scrolled state for styling
+      setScrolled(currentScrollY > 20)
+
+      // Handle visibility on scroll
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+
+      setLastScrollY(currentScrollY)
     }
-    window.addEventListener("scroll", handleScroll)
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   const navItems = [
     { label: "Community", href: "#community" },
     { label: "About", href: "#about" },
     { label: "Event", href: "#event" },
+    { label: "Partnership", href: "#partnership" },
     { label: "Speakers", href: "#speakers" },
     { label: "FAQ", href: "#faq" },
   ]
@@ -30,7 +46,8 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-100 transition-all duration-500 ease-in-out ${scrolled ? "py-4" : "py-6"
+        className={`fixed top-0 left-0 right-0 z-100 transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+          } ${scrolled ? "py-4" : "py-6"
           }`}
       >
         <div className="max-w-7xl mx-auto px-6">

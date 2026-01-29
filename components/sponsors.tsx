@@ -3,9 +3,11 @@
 import Image from "next/image"
 
 const sponsors = [
-  { name: "Avalanche", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/Avalanche.jpg", tier: "Gold" },
-  { name: "ImageKit", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/BaD_Ethiopia.jpg", tier: "Platinum" },
-  // Add more as needed
+  { name: "AASTU", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/aastu?updatedAt=1769639379105", url: "https://www.aastu.edu.et/", tier: "Partner" },
+  { name: "BaD", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Main/bad-white-logo?updatedAt=1769629613228", url: "https://www.buildadao.io/", tier: "Partner" },
+  { name: "Pizza DAO", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Main/pizza-dao?updatedAt=1769628593738", url: "https://globalpizza.party/", tier: "Partner" },
+  { name: "Dev3pack", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Main/Dev3pack?updatedAt=1769629592797", url: "https://dev3pack.xyz/", tier: "Partner" },
+  { name: "BuidlGuidl", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Main/BuidlGuidl?updatedAt=1769630659256", url: "https://buidlguidl.com/", tier: "Partner" },
 ]
 
 export default function Sponsors() {
@@ -22,10 +24,13 @@ export default function Sponsors() {
           <p className="text-foreground/40 text-xl font-light">Join the global leaders supporting the future of Web3 in Ethiopia.</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {sponsors.map((sponsor, i) => (
-            <div
+            <a
               key={i}
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex flex-col items-center justify-center p-12 rounded-[2.5rem] border border-white/5 bg-neutral-900/30 backdrop-blur-3xl hover:bg-neutral-900/50 transition-all duration-500 group"
             >
               <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 grayscale group-hover:grayscale-0 transition-all duration-700">
@@ -37,7 +42,7 @@ export default function Sponsors() {
                 />
               </div>
               <span className="text-white/30 font-black tracking-[0.2em] uppercase text-[10px]">{sponsor.tier}</span>
-            </div>
+            </a>
           ))}
 
           {/* Placeholder for "Your Logo" */}

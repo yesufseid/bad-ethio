@@ -15,7 +15,7 @@ const highlights = [
     title: "Expert Mentorship",
     category: "Guidance",
     description: "Learn directly from industry builders and global protocol experts.",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/core_team_members.jpg",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/solomon-tigabu-speaker?updatedAt=1769640352168",
     color: "bg-cyan-500/10"
   },
   {

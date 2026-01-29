@@ -37,11 +37,11 @@ export default function AboutClub() {
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="mb-24 animate-fade-in max-w-4xl">
           <h2 className="text-5xl md:text-8xl font-black text-white mb-10 leading-[0.9] tracking-tighter animate-slide-up">
-            About <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent italic">BaD Ethiopia</span>
+            Our <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent italic">Community</span>
           </h2>
           <p className="text-2xl md:text-3xl text-foreground/40 leading-tight text-balance font-light animate-fade-in tracking-tight" style={{ animationDelay: "0.2s" }}>
-            BaD Ethiopia is a university-first Web3 ecosystem-building initiative designed to unlock, identify, and
-            accelerate the next generation of blockchain developers, builders, and founders in Ethiopia.
+            BaD (Builders & Developers) Ethiopia is the driving force behind BlockFest,
+            cultivating a vibrant ecosystem where technical excellence meets radical innovation.
           </p>
         </div>
 

@@ -5,37 +5,37 @@ import Image from "next/image"
 
 const events = [
   {
-    time: "January 2026",
+    time: "Feb - March 2026",
     title: "High School Tour",
     description: "Blockchain education in 3 STEM-focused schools across Ethiopia",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp_4.jpg"
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_9_2026-01-25_22-37-31.jpg?updatedAt=1769371906278"
   },
   {
-    time: "Feb 1-3",
+    time: "March 18-20",
     title: "Hackathon Days 1-3",
     description: "BUIDL Track: 3-day hackathon with workshops and mentorship",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp_5.jpg"
   },
   {
-    time: "Feb 2-3",
+    time: "March 21-22",
     title: "Alpha Track",
     description: "Keynotes on DeFi, DAOs, RWA, DePIN, Privacy & careers",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/Avalanche_3.jpg"
   },
   {
-    time: "Feb 2-3",
-    title: "Culture Track",
+    time: "March 23-24",
+    title: "Culture & Ecosystem",
     description: "Networking mixers, sponsor activations, founder meetups",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/pizza_party_2.jpg"
   },
   {
-    time: "Feb 3 Evening",
+    time: "March 25 Morning",
     title: "Final Demos & Judging",
     description: "Showcase projects to judges from protocol foundations",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_11_2026-01-25_22-37-31.jpg"
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_18_2026-01-25_22-34-06.jpg?updatedAt=1769371906138"
   },
   {
-    time: "Feb 3",
+    time: "March 25 Evening",
     title: "Awards Ceremony",
     description: "Winners announced for prizes, grants, and internships",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_14_2026-01-25_22-37-31.jpg"

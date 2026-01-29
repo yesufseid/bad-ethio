@@ -40,22 +40,7 @@ export const InteractiveCanvas = () => {
                         if (!ctx) return
                         ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-                        // Draw Grid
-                        ctx.strokeStyle = "rgba(255, 255, 255, 0.02)"
-                        ctx.lineWidth = 0.5
-                        const gridSize = 120
-                        for (let x = 0; x < canvas.width; x += gridSize) {
-                                ctx.beginPath()
-                                ctx.moveTo(x, 0)
-                                ctx.lineTo(x, canvas.height)
-                                ctx.stroke()
-                        }
-                        for (let y = 0; y < canvas.height; y += gridSize) {
-                                ctx.beginPath()
-                                ctx.moveTo(0, y)
-                                ctx.lineTo(canvas.width, y)
-                                ctx.stroke()
-                        }
+                        // Draw Grid is now handled by CSS background for performance
 
                         ctx.fillStyle = "rgba(168, 85, 247, 0.1)" // Purple tint
                         ctx.strokeStyle = "rgba(168, 85, 247, 0.03)"
@@ -100,7 +85,11 @@ export const InteractiveCanvas = () => {
         return (
                 <canvas
                         ref={canvasRef}
-                        className="fixed inset-0 pointer-events-none z-0 opacity-50"
+                        className="fixed inset-0 pointer-events-none z-0 opacity-50 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.05)_0%,transparent_70%)]"
+                        style={{
+                                backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px)`,
+                                backgroundSize: '120px 120px'
+                        } as React.CSSProperties}
                 />
         )
 }

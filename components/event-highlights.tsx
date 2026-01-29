@@ -71,7 +71,7 @@ export default function EventHighlights() {
                 src={item.image}
                 alt={item.title}
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2.5s] opacity-60 group-hover:opacity-100"
+                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-[filter,transform,opacity] duration-[2.5s] opacity-60 group-hover:opacity-100"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
             </motion.div>

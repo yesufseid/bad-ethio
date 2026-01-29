@@ -189,12 +189,15 @@ export default function SponsorshipDetails() {
                                                                 ))}
                                                         </div>
 
-                                                        <button className={`w-full py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] transition-all ${tier.featured
-                                                                ? "bg-purple-500 text-white hover:bg-purple-400 shadow-[0_0_30px_rgba(168,85,247,0.4)]"
-                                                                : "bg-white/5 text-white/60 hover:bg-white/10 border border-white/10"
-                                                                }`}>
+                                                        <a
+                                                                href={`mailto:ethiopiabad@gmail.com?subject=Sponsorship Inquiry: ${tier.name} Tier`}
+                                                                className={`w-full py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] transition-all flex items-center justify-center ${tier.featured
+                                                                        ? "bg-purple-500 text-white hover:bg-purple-400 shadow-[0_0_30px_rgba(168,85,247,0.4)]"
+                                                                        : "bg-white/5 text-white/60 hover:bg-white/10 border border-white/10"
+                                                                        }`}
+                                                        >
                                                                 Become a {tier.name}
-                                                        </button>
+                                                        </a>
                                                 </div>
                                         ))}
                                 </div>

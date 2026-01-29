@@ -63,8 +63,9 @@ export default function Footer() {
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/20 text-xs font-black uppercase tracking-widest">© 2026 BaD Ethiopia. All rights reserved.</p>
-          <div className="flex gap-12 text-white/20 text-xs font-black uppercase tracking-widest">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-white/20 text-xs font-black uppercase tracking-widest">
             <span>Built by builders for builders</span>
+            <a href="tel:+251922469656" className="hover:text-white transition-colors tracking-[0.2em]">+251 922 469 656</a>
             <span>Addis Ababa, Ethiopia</span>
           </div>
         </div>

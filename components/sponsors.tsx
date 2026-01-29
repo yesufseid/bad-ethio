@@ -46,12 +46,15 @@ export default function Sponsors() {
           ))}
 
           {/* Placeholder for "Your Logo" */}
-          <div className="flex flex-col items-center justify-center p-12 rounded-[2.5rem] border border-dashed border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 cursor-pointer group">
+          <a
+            href="mailto:ethiopiabad@gmail.com?subject=Sponsorship Inquiry"
+            className="flex flex-col items-center justify-center p-12 rounded-[2.5rem] border border-dashed border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 cursor-pointer group"
+          >
             <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <span className="text-white/40 text-4xl font-light">+</span>
             </div>
             <span className="text-white/40 font-black tracking-widest uppercase text-xs">Become a Sponsor</span>
-          </div>
+          </a>
         </div>
       </div>
     </section>

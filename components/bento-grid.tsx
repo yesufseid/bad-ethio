@@ -10,7 +10,7 @@ export default function BentoGrid() {
                                 <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-4 gap-8 h-auto md:h-[1300px]">
 
                                         {/* Main Vision Tile */}
-                                        <div className="md:col-span-2 md:row-span-2 relative group rounded-[3rem] overflow-hidden border border-white/5 bg-neutral-950/50 backdrop-blur-3xl transition-all duration-700 hover:scale-[0.99] shadow-2xl">
+                                        <div className="md:col-span-2 md:row-span-2 relative group rounded-[3rem] overflow-hidden border border-white/5 bg-neutral-950/50 backdrop-blur-3xl transition-transform duration-700 hover:scale-[0.99] shadow-2xl">
                                                 <Image
                                                         src="https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/BaD_Ethiopia.jpg"
                                                         alt="BaD Ethiopia Vision"
@@ -50,7 +50,7 @@ export default function BentoGrid() {
                                                                 loading="lazy"
                                                                 referrerPolicy="no-referrer-when-downgrade"
                                                                 title="Event Location"
-                                                                className="grayscale contrast-125 opacity-30 hover:opacity-100 hover:grayscale-0 transition-all duration-700"
+                                                                className="grayscale contrast-125 opacity-30 hover:opacity-100 hover:grayscale-0 transition-[filter,opacity] duration-700"
                                                         />
                                                 </div>
                                                 <div className="p-10 bg-black/80 backdrop-blur-2xl border-t border-white/5">

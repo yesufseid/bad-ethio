@@ -63,78 +63,81 @@ export default function CommunityMarquee() {
 
                         <div className="space-y-12">
                                 {/* Row 1 */}
-                                <div className="flex w-full no-scrollbar">
-                                        <motion.div
-                                                animate={{ x: [0, -2500] }}
-                                                transition={{
-                                                        duration: 60,
-                                                        repeat: Infinity,
-                                                        ease: "linear",
-                                                }}
-                                                className="flex gap-8 min-w-full"
+                                <div className="flex w-full no-scrollbar overflow-hidden">
+                                        <div
+                                                className="flex gap-8 animate-marquee-left w-fit"
+                                                style={{ "--duration": "60s" } as React.CSSProperties}
                                         >
-                                                {[...imagesRow1, ...imagesRow1, ...imagesRow1].map((src, i) => (
+                                                {[...imagesRow1, ...imagesRow1].map((src, i) => (
                                                         <div
                                                                 key={i}
-                                                                className="relative shrink-0 w-80 h-48 md:w-[600px] md:h-[350px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl transition-all duration-700 hover:scale-95 group"
+                                                                className="relative shrink-0 w-80 h-48 md:w-[600px] md:h-[350px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl transition-[transform,filter] duration-700 hover:scale-95 group"
                                                         >
-                                                                <Image src={src} alt="Community" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                                                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+                                                                <Image
+                                                                        src={src}
+                                                                        alt="Community"
+                                                                        fill
+                                                                        sizes="(max-width: 768px) 320px, 600px"
+                                                                        className="object-cover grayscale group-hover:grayscale-0 transition-[filter,transform] duration-500"
+                                                                />
+                                                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                                                         </div>
                                                 ))}
-                                        </motion.div>
+                                        </div>
                                 </div>
 
                                 {/* Row 2 */}
-                                <div className="flex w-full no-scrollbar">
-                                        <motion.div
-                                                animate={{ x: [-2500, 0] }}
-                                                transition={{
-                                                        duration: 80,
-                                                        repeat: Infinity,
-                                                        ease: "linear",
-                                                }}
-                                                className="flex gap-8 min-w-full"
+                                <div className="flex w-full no-scrollbar overflow-hidden">
+                                        <div
+                                                className="flex gap-8 animate-marquee-right w-fit"
+                                                style={{ "--duration": "80s" } as React.CSSProperties}
                                         >
-                                                {[...imagesRow2, ...imagesRow2, ...imagesRow2].map((src, i) => (
+                                                {[...imagesRow2, ...imagesRow2].map((src, i) => (
                                                         <div
                                                                 key={i}
-                                                                className="relative shrink-0 w-80 h-48 md:w-[600px] md:h-[350px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl transition-all duration-700 hover:scale-95 group"
+                                                                className="relative shrink-0 w-80 h-48 md:w-[600px] md:h-[350px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl transition-[transform,filter] duration-700 hover:scale-95 group"
                                                         >
-                                                                <Image src={src} alt="Community" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                                                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+                                                                <Image
+                                                                        src={src}
+                                                                        alt="Community"
+                                                                        fill
+                                                                        sizes="(max-width: 768px) 320px, 600px"
+                                                                        className="object-cover grayscale group-hover:grayscale-0 transition-[filter,transform] duration-500"
+                                                                />
+                                                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                                                         </div>
                                                 ))}
-                                        </motion.div>
+                                        </div>
                                 </div>
 
                                 {/* Row 3 */}
-                                <div className="flex w-full no-scrollbar">
-                                        <motion.div
-                                                animate={{ x: [0, -2500] }}
-                                                transition={{
-                                                        duration: 70,
-                                                        repeat: Infinity,
-                                                        ease: "linear",
-                                                }}
-                                                className="flex gap-8 min-w-full"
+                                <div className="flex w-full no-scrollbar overflow-hidden">
+                                        <div
+                                                className="flex gap-8 animate-marquee-left w-fit"
+                                                style={{ "--duration": "70s" } as React.CSSProperties}
                                         >
-                                                {[...imagesRow3, ...imagesRow3, ...imagesRow3].map((src, i) => (
+                                                {[...imagesRow3, ...imagesRow3].map((src, i) => (
                                                         <div
                                                                 key={i}
-                                                                className="relative shrink-0 w-80 h-48 md:w-[600px] md:h-[350px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl transition-all duration-700 hover:scale-95 group"
+                                                                className="relative shrink-0 w-80 h-48 md:w-[600px] md:h-[350px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl transition-[transform,filter] duration-700 hover:scale-95 group"
                                                         >
-                                                                <Image src={src} alt="Community" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                                                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+                                                                <Image
+                                                                        src={src}
+                                                                        alt="Community"
+                                                                        fill
+                                                                        sizes="(max-width: 768px) 320px, 600px"
+                                                                        className="object-cover grayscale group-hover:grayscale-0 transition-[filter,transform] duration-500"
+                                                                />
+                                                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                                                         </div>
                                                 ))}
-                                        </motion.div>
+                                        </div>
                                 </div>
                         </div>
 
                         {/* Side Gradients */}
-                        <div className="absolute inset-y-0 left-0 w-64 bg-linear-to-r from-background via-background/90 to-transparent z-10" />
-                        <div className="absolute inset-y-0 right-0 w-64 bg-linear-to-l from-background via-background/90 to-transparent z-10" />
+                        <div className="absolute inset-y-0 left-0 w-64 bg-linear-to-r from-background via-background/90 to-transparent z-10 pointer-events-none" />
+                        <div className="absolute inset-y-0 right-0 w-64 bg-linear-to-l from-background via-background/90 to-transparent z-10 pointer-events-none" />
                 </section>
         )
 }

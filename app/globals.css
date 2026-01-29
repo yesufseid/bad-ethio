@@ -125,8 +125,18 @@
 
   @keyframes scroll {
     to {
-      transform: translate(calc(-50% - 0.5rem));
+      transform: translate3d(calc(-50% - 0.5rem), 0, 0);
     }
+  }
+
+  @keyframes marquee-left {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+
+  @keyframes marquee-right {
+    from { transform: translate3d(-50%, 0, 0); }
+    to { transform: translate3d(0, 0, 0); }
   }
 
   --animate-blink-cursor: blink-cursor 1.2s step-end infinite
@@ -181,6 +191,21 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  
+  .animate-marquee-left {
+    animation: marquee-left var(--duration, 30s) linear infinite;
+    will-change: transform;
+  }
+
+  .animate-marquee-right {
+    animation: marquee-right var(--duration, 30s) linear infinite;
+    will-change: transform;
+  }
+
+  img {
+    backface-visibility: hidden;
+    -webkit-user-drag: none;
   }
 }
 

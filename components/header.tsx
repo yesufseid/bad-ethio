@@ -46,7 +46,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-100 transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
           } ${scrolled ? "py-4" : "py-6"
           }`}
       >
@@ -61,7 +61,7 @@ export default function Header() {
                 <div className="relative flex items-center justify-center">
                   <div className="absolute inset-0 bg-white/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
                   <Image
-                    src="/BLOCKFEST-logo.png"
+                    src="/blockfest-logo.png"
                     alt="Logo"
                     width={28}
                     height={28}
@@ -129,7 +129,7 @@ export default function Header() {
             initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
             animate={{ opacity: 1, backdropFilter: "blur(40px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            className="fixed inset-0 z-90 bg-black/60 flex flex-col items-center justify-center"
+            className="fixed inset-0 z-[90] bg-black/60 flex flex-col items-center justify-center"
           >
             <nav className="flex flex-col items-center gap-12 text-center">
               {navItems.map((item, i) => (

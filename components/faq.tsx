@@ -32,6 +32,7 @@ export default function FAQ() {
           src="https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_13_2026-01-25_22-37-31.jpg"
           alt="Background"
           fill
+          sizes="(max-width: 1024px) 50vw, 33vw"
           className="object-cover grayscale"
         />
       </div>

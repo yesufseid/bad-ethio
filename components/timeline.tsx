@@ -75,6 +75,7 @@ export default function Timeline() {
                   src={event.image}
                   alt={event.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-[3s] ease-out"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/80 transition-colors duration-500" />

@@ -6,19 +6,20 @@ import Image from "next/image"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-30">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[7.5rem]">
       {/* Background Image with Heavy Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
           src="https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/Avalanche.jpg"
           alt="Web3 Atmosphere"
           fill
+          sizes="100vw"
           className="object-cover opacity-20 grayscale scale-110"
           priority
         />
         <div className="absolute inset-0 bg-background/90 z-10" />
-        <div className="absolute inset-x-0 top-0 h-48 bg-linear-to-b from-background to-transparent z-15" />
-        <div className="absolute inset-x-0 bottom-0 h-[30vh] bg-linear-to-t from-background via-background/80 to-transparent z-15" />
+        <div className="absolute inset-x-0 top-0 h-48 bg-linear-to-b from-background to-transparent z-[15]" />
+        <div className="absolute inset-x-0 bottom-0 h-[30vh] bg-linear-to-t from-background via-background/80 to-transparent z-[15]" />
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -27,9 +28,10 @@ export default function Hero() {
           <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors cursor-default">
             <div className="relative w-4 h-4">
               <Image
-                src="/BLOCKFEST-logo.png"
+                src="/blockfest-logo.png"
                 alt="Logo"
                 fill
+                sizes="16px"
                 className="object-contain grayscale invert brightness-200"
               />
             </div>
@@ -55,6 +57,7 @@ export default function Hero() {
                 src="/bad-ethiopia.jpg"
                 alt="BaD Ethiopia Logo"
                 fill
+                sizes="20px"
                 className="object-contain p-0.5"
               />
             </div>
@@ -89,6 +92,7 @@ export default function Hero() {
                   src="/bad-ethiopia.jpg"
                   alt="BaD"
                   fill
+                  sizes="20px"
                   className="object-contain p-0.5"
                 />
               </div>

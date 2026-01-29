@@ -29,6 +29,7 @@ export default function AboutClub() {
           src="https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/core_team_members_2.jpg?updatedAt=1769371906280"
           alt="Team Background"
           fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
           className="object-cover grayscale"
         />
         <div className="absolute inset-0 bg-linear-to-l from-transparent via-background/10 to-background" />

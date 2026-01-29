@@ -203,6 +203,14 @@
     will-change: transform;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee-left,
+    .animate-marquee-right {
+      animation: none;
+      transform: none;
+    }
+  }
+
   img {
     backface-visibility: hidden;
     -webkit-user-drag: none;

@@ -66,7 +66,7 @@ export default function CommunityMarquee() {
                                 <div className="flex w-full no-scrollbar overflow-hidden">
                                         <div
                                                 className="flex gap-8 animate-marquee-left w-fit"
-                                                style={{ "--duration": "60s" } as React.CSSProperties}
+                                                style={{ "--duration": "120s" } as React.CSSProperties}
                                         >
                                                 {[...imagesRow1, ...imagesRow1].map((src, i) => (
                                                         <div
@@ -90,7 +90,7 @@ export default function CommunityMarquee() {
                                 <div className="flex w-full no-scrollbar overflow-hidden">
                                         <div
                                                 className="flex gap-8 animate-marquee-right w-fit"
-                                                style={{ "--duration": "80s" } as React.CSSProperties}
+                                                style={{ "--duration": "150s" } as React.CSSProperties}
                                         >
                                                 {[...imagesRow2, ...imagesRow2].map((src, i) => (
                                                         <div
@@ -114,7 +114,7 @@ export default function CommunityMarquee() {
                                 <div className="flex w-full no-scrollbar overflow-hidden">
                                         <div
                                                 className="flex gap-8 animate-marquee-left w-fit"
-                                                style={{ "--duration": "70s" } as React.CSSProperties}
+                                                style={{ "--duration": "135s" } as React.CSSProperties}
                                         >
                                                 {[...imagesRow3, ...imagesRow3].map((src, i) => (
                                                         <div

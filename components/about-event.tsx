@@ -31,17 +31,17 @@ const tracks = [
 
 export default function AboutEvent() {
   return (
-    <section id="event" className="py-40 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+    <section id="event" className="py-24 md:py-40 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-8xl font-black text-white mb-24 tracking-tighter leading-none animate-slide-up">
+        <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-16 md:mb-24 tracking-tighter leading-none animate-slide-up">
           The <span className="italic opacity-50 text-neutral-500">Tracks</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {tracks.map((track, i) => (
             <div
               key={i}
-              className="group relative h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden border border-white/5 bg-neutral-900/30 backdrop-blur-3xl animate-fade-in"
+              className="group relative h-[350px] sm:h-[400px] md:h-[500px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/5 bg-neutral-900/30 backdrop-blur-3xl animate-fade-in"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <Image
@@ -50,9 +50,9 @@ export default function AboutEvent() {
                 fill
                 className="object-cover opacity-20 group-hover:opacity-40 group-hover:scale-105 transition-all duration-[2s] grayscale group-hover:grayscale-0"
               />
-              <div className="absolute inset-x-0 bottom-0 p-12 bg-linear-to-t from-black via-black/80 to-transparent z-20">
-                <h3 className={`text-3xl font-black mb-4 tracking-tighter ${track.color}`}>{track.title}</h3>
-                <p className="text-white/40 text-xl font-light leading-relaxed max-w-sm">{track.description}</p>
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 bg-linear-to-t from-black via-black/80 to-transparent z-20">
+                <h3 className={`text-2xl md:text-3xl font-black mb-3 md:mb-4 tracking-tighter ${track.color}`}>{track.title}</h3>
+                <p className="text-white/40 text-lg md:text-xl font-light leading-relaxed max-w-sm">{track.description}</p>
               </div>
             </div>
           ))}

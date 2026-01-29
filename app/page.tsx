@@ -9,6 +9,7 @@ import BentoGrid from "@/components/bento-grid"
 import AboutClub from "@/components/about-club"
 import AboutEvent from "@/components/about-event"
 import EventHighlights from "@/components/event-highlights"
+import SeasonRoadmap from "@/components/season-roadmap"
 import Timeline from "@/components/timeline"
 import Speakers from "@/components/speakers"
 import Registration from "@/components/registration"
@@ -55,6 +56,10 @@ export default function Home() {
 
       <RevealOnScroll>
         <AboutEvent />
+      </RevealOnScroll>
+
+      <RevealOnScroll>
+        <SeasonRoadmap />
       </RevealOnScroll>
 
       <RevealOnScroll>

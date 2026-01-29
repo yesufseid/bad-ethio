@@ -51,12 +51,12 @@ const imagesRow3 = [
 
 export default function CommunityMarquee() {
         return (
-                <section className="py-40 bg-background overflow-hidden relative">
-                        <div className="max-w-7xl mx-auto px-4 mb-24 text-center">
-                                <h2 className="text-5xl md:text-[10rem] font-black text-white mb-8 tracking-tighter leading-[0.8] animate-slide-up">
-                                        Massive <span className="italic opacity-50 text-neutral-500 block md:inline">Momentum</span>
+                <section className="py-24 md:py-40 bg-background overflow-hidden relative">
+                        <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 text-center">
+                                <h2 className="text-4xl sm:text-5xl md:text-[10rem] font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1.1] md:leading-[1.2] animate-slide-up py-8 md:py-12 overflow-visible">
+                                        Massive <span className="italic opacity-50 text-neutral-500 block md:inline-block px-6 md:px-12 py-4 md:py-8 -mx-6 md:-mx-12 -my-4 md:-my-8 overflow-visible">Momentum</span>
                                 </h2>
-                                <p className="text-foreground/40 text-2xl md:text-3xl max-w-4xl mx-auto font-light tracking-tight mt-12">
+                                <p className="text-foreground/40 text-lg sm:text-2xl md:text-3xl max-w-4xl mx-auto font-light tracking-tight mt-6 md:mt-12 px-4">
                                         Behind every line of code is a builder. Behind every builder is a community.
                                 </p>
                         </div>

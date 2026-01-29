@@ -43,21 +43,21 @@ const highlights = [
 
 export default function EventHighlights() {
   return (
-    <section id="highlights" className="py-40 px-6 bg-black relative">
-      <div className="max-w-7xl mx-auto mb-32">
-        <h2 className="text-5xl md:text-[10rem] font-black text-white tracking-tighter leading-[0.8] animate-slide-up">
-          Season <span className="italic opacity-50 text-neutral-500">Highlights</span>
+    <section id="highlights" className="py-24 md:py-40 px-6 bg-black relative">
+      <div className="max-w-7xl mx-auto mb-16 md:mb-32">
+        <h2 className="text-4xl sm:text-5xl md:text-[10rem] font-black text-white tracking-tighter leading-[1.1] md:leading-[1.2] animate-slide-up py-8 md:py-12 overflow-visible">
+          Season <span className="italic opacity-50 text-neutral-500 inline-block px-6 md:px-12 py-4 md:py-8 -mx-6 md:-mx-12 -my-4 md:-my-8 overflow-visible">Highlights</span>
         </h2>
-        <p className="text-white/40 text-2xl md:text-3xl max-w-2xl mt-12 font-light tracking-tight">
+        <p className="text-white/40 text-lg sm:text-2xl md:text-3xl max-w-2xl mt-6 md:mt-12 font-light tracking-tight">
           An intense, 7-day immersion into the future of decentralization.
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col gap-32">
+      <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-32">
         {highlights.map((item, i) => (
           <div
             key={i}
-            className={`flex flex-col ${i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} gap-12 md:gap-24 items-center`}
+            className={`flex flex-col ${i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} gap-8 md:gap-24 items-center`}
           >
             {/* Massive Image Block */}
             <motion.div
@@ -84,13 +84,13 @@ export default function EventHighlights() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex-1 space-y-8"
             >
-              <span className="text-cyan-400 text-xs font-black tracking-[0.4em] uppercase">
+              <span className="text-cyan-400 text-[10px] md:text-xs font-black tracking-[0.4em] uppercase">
                 {item.category}
               </span>
-              <h3 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tighter leading-none">
                 {item.title}
               </h3>
-              <p className="text-white/40 text-2xl font-light leading-relaxed max-w-lg">
+              <p className="text-white/40 text-lg sm:text-xl md:text-2xl font-light leading-relaxed max-w-lg">
                 {item.description}
               </p>
 

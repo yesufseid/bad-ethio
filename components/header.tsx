@@ -56,23 +56,23 @@ export default function Header() {
               }`}
           >
             {/* Logo Section */}
-            <div className="flex items-center gap-3">
-              <Link href="/" className="flex items-center gap-3 group">
+            <div className="flex items-center gap-2 md:gap-3">
+              <Link href="/" className="flex items-center gap-3 md:gap-4 group">
                 <div className="relative flex items-center justify-center">
-                  <div className="absolute inset-0 bg-white/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                  <div className="absolute inset-0 bg-white/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
                   <Image
                     src="/blockfest-logo.png"
                     alt="Logo"
-                    width={28}
-                    height={28}
-                    className="relative z-10 grayscale invert brightness-200 transition-transform duration-500 group-hover:scale-110"
+                    width={32}
+                    height={32}
+                    className="md:w-10 md:h-10 relative z-10 grayscale invert brightness-200 transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xs font-black tracking-[0.4em] text-white uppercase leading-none">
+                  <span className="text-[10px] md:text-sm font-black tracking-[0.4em] text-white uppercase leading-none">
                     BLOCKFEST
                   </span>
-                  <span className="text-[7px] font-black tracking-[0.6em] text-white/20 uppercase mt-1">
+                  <span className="text-[6px] md:text-[8px] font-black tracking-[0.6em] text-white/30 uppercase mt-1 md:mt-1.5 transition-colors group-hover:text-white/60">
                     ETHIOPIA
                   </span>
                 </div>
@@ -94,7 +94,7 @@ export default function Header() {
             </nav>
 
             {/* Action Section */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 md:gap-6">
               <div className="hidden lg:flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
                 <span className="text-[10px] font-black text-white/30 uppercase tracking-widest">Live 2026</span>
@@ -103,10 +103,10 @@ export default function Header() {
               <Link href="#register">
                 <Button
                   size="sm"
-                  className="h-10 px-6 rounded-full bg-white text-black hover:bg-neutral-200 font-black text-[10px] tracking-widest uppercase transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)] border-none"
+                  className="h-8 md:h-10 px-4 md:px-6 rounded-full bg-white text-black hover:bg-neutral-200 font-black text-[8px] md:text-[10px] tracking-widest uppercase transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)] border-none"
                 >
                   Register
-                  <ChevronRight size={10} className="ml-1" />
+                  <ChevronRight size={8} className="ml-1 md:size-10" />
                 </Button>
               </Link>
 

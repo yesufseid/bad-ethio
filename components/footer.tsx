@@ -11,11 +11,7 @@ export default function Footer() {
 
           <div className="md:col-span-2">
             <div className="flex items-center gap-4 mb-8 group cursor-default">
-              <div className="w-12 h-12 relative flex items-center justify-center transition-transform group-hover:rotate-12 duration-500">
-                <div
-                  className="absolute bg-white/10 w-full h-full z-0 rotate-15"
-                  style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}
-                />
+              <div className="w-12 h-12 relative flex items-center justify-center transition-transform group-hover:rotate-12 duration-500 bg-white/5 rounded-xl border border-white/10">
                 <Image
                   src="/blockfest-logo.png"
                   alt="Logo"

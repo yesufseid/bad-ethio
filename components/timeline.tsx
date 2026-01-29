@@ -5,49 +5,69 @@ import Image from "next/image"
 
 const events = [
   {
-    time: "Feb - March 2026",
-    title: "High School Tour",
-    description: "Blockchain education in 3 STEM-focused schools across Ethiopia",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_9_2026-01-25_22-37-31.jpg?updatedAt=1769371906278"
+    time: "March 18",
+    title: "Opening & Alignment",
+    description: "Opening ceremony, ecosystem vision, and expectations. Brand association with national Web3 initiative.",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp_5.jpg",
+    value: "National Visibility"
   },
   {
-    time: "March 18-20",
-    title: "Hackathon Days 1-3",
-    description: "BUIDL Track: 3-day hackathon with workshops and mentorship",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp_5.jpg"
+    time: "March 19",
+    title: "Team Formation & Ideation",
+    description: "Team formation, ideation sprints, and workshops. Early exposure to top student builders.",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/Avalanche_3.jpg",
+    value: "Talent Discovery"
   },
   {
-    time: "March 21-22",
-    title: "Alpha Track",
-    description: "Keynotes on DeFi, DAOs, RWA, DePIN, Privacy & careers",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/Avalanche_3.jpg"
+    time: "March 20",
+    title: "Hackathon Kickoff",
+    description: "Intense hacking begins with focused workshops. Hands-on protocol engagement for builders.",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/pizza_party_2.jpg",
+    value: "Protocol Integration"
   },
   {
-    time: "March 23-24",
-    title: "Culture & Ecosystem",
-    description: "Networking mixers, sponsor activations, founder meetups",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/pizza_party_2.jpg"
+    time: "March 21",
+    title: "Build Phase",
+    description: "Active development with 24/7 technical support and mentor guidance. Real product engineering.",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp.jpg",
+    value: "Product Development"
   },
   {
-    time: "March 25 Morning",
-    title: "Final Demos & Judging",
-    description: "Showcase projects to judges from protocol foundations",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_18_2026-01-25_22-34-06.jpg?updatedAt=1769371906138"
+    time: "March 22",
+    title: "Final Submission",
+    description: "Code freeze and pitch preparation. Culmination of technical development with measurable deliverables.",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/Avalanche_session.jpg",
+    value: "Measurable ROI"
   },
   {
-    time: "March 25 Evening",
-    title: "Awards Ceremony",
-    description: "Winners announced for prizes, grants, and internships",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_14_2026-01-25_22-37-31.jpg"
+    time: "March 23",
+    title: "Internal Demo Day",
+    description: "Technical demos and mentor review. Shortlisting the top 10 projects from the cohort.",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_18_2026-01-25_22-34-06.jpg?updatedAt=1769371906138",
+    value: "Curated Deal Flow"
+  },
+  {
+    time: "March 24",
+    title: "Conference Preparation",
+    description: "Demo polish, storytelling, and stage preparation for the main stage presentation.",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp_4.jpg",
+    value: "Storytelling"
+  },
+  {
+    time: "March 25",
+    title: "Conference & Awards",
+    description: "Top 10 demos on the main stage, keynotes, panels, and award ceremony. Thought leadership visibility.",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_14_2026-01-25_22-37-31.jpg",
+    value: "Global Exposure"
   },
 ]
 
 export default function Timeline() {
   return (
-    <section className="py-40 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+    <section id="schedule" className="py-40 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl md:text-7xl lg:text-[clamp(4rem,10vw,8rem)] font-black text-white mb-32 text-center tracking-tighter leading-none animate-slide-up">
-          Season <span className="italic text-purple-500/50">Timeline</span>
+          Core <span className="italic text-purple-500/50">Program</span>
         </h2>
 
         <div className="space-y-40">
@@ -58,9 +78,14 @@ export default function Timeline() {
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="flex-1 space-y-6 text-center md:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 mb-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-                  <p className="text-purple-400 font-bold uppercase tracking-[0.2em] text-[10px]">{event.time}</p>
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                    <p className="text-purple-400 font-bold uppercase tracking-[0.2em] text-[10px]">{event.time}</p>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                    <p className="text-cyan-400 font-bold uppercase tracking-[0.2em] text-[10px]">{event.value}</p>
+                  </div>
                 </div>
                 <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-tight drop-shadow-2xl">
                   {event.title}

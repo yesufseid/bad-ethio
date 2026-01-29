@@ -155,6 +155,12 @@
     0%, 100% { opacity: 0.15; transform: scale(1.1); }
     50% { opacity: 0.25; transform: scale(1.15); }
   }
+
+  --animate-bounce-slow: bounce-slow 4s ease-in-out infinite;
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+  }
 }
 
 @layer base {

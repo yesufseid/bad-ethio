@@ -8,20 +8,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[7.5rem]">
       {/* Background Image with Heavy Gradient Overlay */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
-        <div className="relative w-[150%] h-[150%] opacity-15 grayscale brightness-50 blur-3xl scale-110 animate-pulse-slow">
-          <Image
-            src="/blockfest-logo.jpg"
-            alt="Blockfest Background"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-background/80 z-10" />
-        <div className="absolute inset-x-0 top-0 h-48 bg-linear-to-b from-background to-transparent z-[15]" />
-        <div className="absolute inset-x-0 bottom-0 h-[30vh] bg-linear-to-t from-background via-background/80 to-transparent z-[15]" />
-      </div>
+      <div className="absolute inset-0 z-0 bg-black" />
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-12 md:mb-20 animate-fade-in group/top">
@@ -36,7 +23,7 @@ export default function Hero() {
                 alt="Blockfest Logo"
                 fill
                 sizes="(max-width: 768px) 40px, 64px"
-                className="object-contain grayscale invert brightness-200 transition-all duration-700 group-hover/logo:scale-110 group-hover/logo:rotate-3"
+                className="object-contain transition-all duration-700 group-hover/logo:scale-110 group-hover/logo:rotate-3"
                 priority
               />
             </div>
@@ -82,9 +69,15 @@ export default function Hero() {
         <div className="mb-8 md:mb-12 overflow-visible">
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[clamp(5rem,15vw,10rem)] font-black text-white mb-6 md:mb-8 animate-slide-up leading-[1.1] md:leading-[1.2] tracking-[-0.05em] py-8 md:py-12 overflow-visible">
             <span className="block mb-2 md:mb-4 opacity-40 text-[10px] sm:text-xs md:text-sm lg:text-base tracking-[0.4em] uppercase font-black">University Blockchain Week</span>
-            <span className="bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent italic px-6 md:px-12 py-4 md:py-8 -mx-6 md:-mx-12 -my-4 md:-my-8 inline-block overflow-visible">
-              BlockFest Ethiopia
-            </span>
+            <div className="relative w-full max-w-xl aspect-square mx-auto animate-bounce-slow px-4 sm:px-8">
+              <Image
+                src="/blockfest-logo.jpg"
+                alt="Blockfest Ethiopia 2026"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </h1>
         </div>
 

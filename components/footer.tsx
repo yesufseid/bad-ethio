@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { Github, Linkedin, Twitter, Send, Mail, MessageSquare } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -17,7 +18,7 @@ export default function Footer() {
                   alt="Logo"
                   width={32}
                   height={32}
-                  className="relative z-10 grayscale invert brightness-200"
+                  className="relative z-10"
                 />
               </div>
               <h2 className="text-4xl font-black text-white tracking-tighter italic">BLOCKFEST</h2>
@@ -25,14 +26,25 @@ export default function Footer() {
             <p className="text-foreground/70 text-xl font-light leading-relaxed max-w-sm mb-12">
               The bridge between Web2 talent and the global Web3 ecosystem. Building the decentralized future of Ethiopia.
             </p>
-            <div className="flex gap-6">
-              {/* Social icons could go here */}
-              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all cursor-pointer group">
-                <span className="text-white/60 text-xs font-black group-hover:text-black transition-colors">X</span>
-              </div>
-              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all cursor-pointer group">
-                <span className="text-white/60 text-xs font-black group-hover:text-black transition-colors">TG</span>
-              </div>
+            <div className="flex flex-wrap gap-4">
+              <a href="https://t.me/BaDEthiopia" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#229ED9] hover:border-[#229ED9] transition-all cursor-pointer group shadow-lg hover:shadow-[#229ED9]/20">
+                <Send className="w-5 h-5 text-white/40 group-hover:text-white transition-colors" />
+              </a>
+              <a href="https://linkedin.com/company/daoethiopia" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#0077B5] hover:border-[#0077B5] transition-all cursor-pointer group shadow-lg hover:shadow-[#0077B5]/20">
+                <Linkedin className="w-5 h-5 text-white/40 group-hover:text-white transition-colors" />
+              </a>
+              <a href="https://x.com/BaDEthiopia?s=20" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:border-white transition-all cursor-pointer group shadow-lg hover:shadow-white/20">
+                <Twitter className="w-5 h-5 text-white/40 group-hover:text-black transition-colors" />
+              </a>
+              <a href="https://github.com/daoethiopia" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#333] hover:border-[#333] transition-all cursor-pointer group shadow-lg hover:shadow-black/20">
+                <Github className="w-5 h-5 text-white/40 group-hover:text-white transition-colors" />
+              </a>
+              <a href="mailto:ethiopiabad@gmail.com" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-purple-500 hover:border-purple-500 transition-all cursor-pointer group shadow-lg hover:shadow-purple-500/20">
+                <Mail className="w-5 h-5 text-white/40 group-hover:text-white transition-colors" />
+              </a>
+              <a href="https://discord.gg/Wnma6VrA7" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#5865F2] hover:border-[#5865F2] transition-all cursor-pointer group shadow-lg hover:shadow-[#5865F2]/20">
+                <MessageSquare className="w-5 h-5 text-white/40 group-hover:text-white transition-colors" />
+              </a>
             </div>
           </div>
 
@@ -58,8 +70,10 @@ export default function Footer() {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-white/20 text-xs font-black uppercase tracking-widest">© 2026 BaD Ethiopia. All rights reserved.</p>
-          <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-white/20 text-xs font-black uppercase tracking-widest">
+          <p className="text-white/20 text-[10px] font-black tracking-widest uppercase">
+            © 2026 <span className="normal-case">BaD</span> Ethiopia. All rights reserved.
+          </p>
+          <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-white/20 text-[10px] font-black uppercase tracking-widest">
             <span>Built by builders for builders</span>
             <a href="tel:+251922469656" className="hover:text-white transition-colors tracking-[0.2em]">+251 922 469 656</a>
             <span>Addis Ababa, Ethiopia</span>

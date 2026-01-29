@@ -65,7 +65,7 @@ export default function Header() {
                     alt="Logo"
                     width={32}
                     height={32}
-                    className="md:w-10 md:h-10 relative z-10 grayscale invert brightness-200 transition-transform duration-500 group-hover:scale-110"
+                    className="md:w-10 md:h-10 relative z-10 transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <div className="flex flex-col">

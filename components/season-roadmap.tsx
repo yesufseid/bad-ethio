@@ -74,7 +74,7 @@ export default function SeasonRoadmap() {
                                                         <span className="italic opacity-30 text-neutral-500">of Growth</span>
                                                 </h3>
                                                 <p className="text-white/40 text-xl md:text-3xl font-light max-w-4xl mx-auto leading-relaxed italic">
-                                                        "We don't build events. We build pipelines for the future of Ethereum in Ethiopia."
+                                                        "We don't build events. We build pipelines for the future of blockchain in Ethiopia."
                                                 </p>
                                         </div>
                                 </RevealOnScroll>

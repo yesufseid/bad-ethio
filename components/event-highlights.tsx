@@ -28,7 +28,7 @@ const highlights = [
   {
     title: "Global Ecosystem",
     category: "Network",
-    description: "Connect with 600+ builders and founders from the Ethereum community.",
+    description: "Connect with 600+ builders and founders from the web3 community.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp_4.jpg",
     color: "bg-blue-500/10"
   },

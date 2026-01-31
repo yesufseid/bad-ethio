@@ -61,8 +61,8 @@ export default function SeasonRoadmap() {
                 <section id="roadmap" ref={containerRef} className="py-48 md:py-96 px-4 bg-black relative overflow-hidden">
                         {/* Cinematic Background Elements */}
                         <div className="absolute inset-0 pointer-events-none">
-                                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[150px] animate-pulse" />
-                                <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-cyan-600/5 rounded-full blur-[180px] animate-pulse delay-1000" />
+                                <div className="absolute top-1/4 left-1/4 w-125 h-125 bg-purple-600/5 rounded-full blur-[150px] animate-pulse" />
+                                <div className="absolute bottom-1/4 right-1/4 w-150 h-150 bg-cyan-600/5 rounded-full blur-[180px] animate-pulse delay-1000" />
                         </div>
 
                         <div className="max-w-7xl mx-auto relative">
@@ -80,7 +80,7 @@ export default function SeasonRoadmap() {
                                 </RevealOnScroll>
 
                                 {/* The Central Nerve (Pipeline Line) */}
-                                <div className="absolute left-[22px] md:left-1/2 top-[500px] bottom-0 w-px bg-white/5 hidden sm:block">
+                                <div className="absolute left-5.5 md:left-1/2 top-125 bottom-0 w-px bg-white/5 hidden sm:block">
                                         <motion.div
                                                 className="absolute top-0 left-0 w-full bg-linear-to-b from-purple-500 via-cyan-500 to-pink-500 origin-top shadow-[0_0_20px_rgba(168,85,247,0.5)]"
                                                 style={{ height: "100%", scaleY: pathLength }}
@@ -91,7 +91,7 @@ export default function SeasonRoadmap() {
                                         {phases.map((phase, i) => (
                                                 <div key={i} className={`flex flex-col ${i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} items-start gap-12 md:gap-32`}>
                                                         {/* Vertical Connector Circle (Mobile/Desktop) */}
-                                                        <div className="absolute left-[10px] md:left-1/2 md:-translate-x-1/2 mt-12 z-20">
+                                                        <div className="absolute left-2.5 md:left-1/2 md:-translate-x-1/2 mt-12 z-20">
                                                                 <motion.div
                                                                         initial={{ scale: 0, opacity: 0 }}
                                                                         whileInView={{ scale: 1, opacity: 1 }}
@@ -152,7 +152,7 @@ export default function SeasonRoadmap() {
                                                         </motion.div>
 
                                                         {/* Suggestive Visual Metaphor (Decorative) */}
-                                                        <div className="hidden md:flex flex-1 items-center justify-center relative min-h-[400px]">
+                                                        <div className="hidden md:flex flex-1 items-center justify-center relative min-h-100">
                                                                 <motion.div
                                                                         initial={{ opacity: 0, scale: 0.5 }}
                                                                         whileInView={{ opacity: 0.2, scale: 1 }}

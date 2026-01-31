@@ -141,7 +141,7 @@ export default function Speakers() {
               onClick={() => setSelectedId(i)}
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="relative aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden cursor-pointer group border border-white/10 bg-neutral-900/40 hover:border-purple-500/30 transition-all duration-500"
+              className="relative aspect-4/5 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden cursor-pointer group border border-white/10 bg-neutral-900/40 hover:border-purple-500/30 transition-all duration-500"
               whileHover={{ y: -10, scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -186,7 +186,7 @@ export default function Speakers() {
 
       <AnimatePresence mode="wait">
         {selectedId !== null && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-12">
+          <div className="fixed inset-0 z-100 flex items-center justify-center p-0 md:p-12">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -254,8 +254,8 @@ export default function Speakers() {
         )}
       </AnimatePresence>
 
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[150px] pointer-events-none opacity-50" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none opacity-50" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-purple-500/10 rounded-full blur-[150px] pointer-events-none opacity-50" />
+      <div className="absolute bottom-0 left-0 w-125 h-125 bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none opacity-50" />
     </section>
   )
 }

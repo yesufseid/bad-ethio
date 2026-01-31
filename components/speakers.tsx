@@ -55,7 +55,7 @@ const speakers = [
   {
     name: "Mearaf Tadewos",
     role: "Product Engineer",
-    expertise: "Specializing in decentralized systems, complex frontend architecture, and high-quality UX. Mearaf is a builder at heart, pushing the boundaries of what's possible on Ethereum.",
+    expertise: "Specializing in decentralized systems, complex frontend architecture, and high-quality UX. Mearaf is a builder at heart, pushing the boundaries of what's possible on blockchain.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/mearaf%20tadewos-speaker?updatedAt=1769640970459",
     icon: Code,
     tags: ["Fullstack", "UX Architecture"],
@@ -82,7 +82,7 @@ const speakers = [
   {
     name: "Solena Daviaud",
     role: "Dev Educator",
-    expertise: "Training developers globally to transition from Web2 to Web3 on Ethereum. Solena is the curriculum lead for several global Web3 onboarding initiatives.",
+    expertise: "Training developers globally to transition from Web2 to Web3 on blockchain. Solena is the curriculum lead for several global Web3 onboarding initiatives.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/solena%20daviaud?updatedAt=1769698497487",
     icon: Shield,
     tags: ["Education", "ETHEthiopia"],

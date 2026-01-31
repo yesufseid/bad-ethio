@@ -97,7 +97,7 @@ export default function ExecutiveSummary() {
                                                 ].map((stat, i) => (
                                                         <div key={i} className="flex flex-col p-8 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors group">
                                                                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-4 group-hover:text-purple-400/50 transition-colors">{stat.label}</span>
-                                                                <span className="text-5xl md:text-6xl font-black text-white tracking-tighter mb-2 group-hover:scale-105 transition-transform origin-left">{stat.value}</span>
+                                                                <span className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-2 group-hover:scale-105 transition-transform origin-left">{stat.value}</span>
                                                                 <span className="text-lg font-light text-white/40 italic">{stat.sub}</span>
                                                         </div>
                                                 ))}

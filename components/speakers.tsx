@@ -80,12 +80,12 @@ const speakers = [
     color: "from-pink-500/20 to-red-500/20"
   },
   {
-    name: "Solena Daviaud",
+    name: "Solene Daviaud",
     role: "Dev Educator",
-    expertise: "Training developers globally to transition from Web2 to Web3 on blockchain. Solena is the curriculum lead for several global Web3 onboarding initiatives.",
+    expertise: "Training developers globally to transition from Web2 to Web3 on blockchain. Solene is the curriculum lead for several global Web3 onboarding initiatives.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/solena%20daviaud?updatedAt=1769698497487",
     icon: Shield,
-    tags: ["Education", "ETHEthiopia"],
+    tags: ["Education", "Dev3Pack"],
     color: "from-red-500/20 to-orange-500/20",
     objectPosition: "object-[center_20%]"
   },

@@ -79,7 +79,7 @@ export default function BentoGrid() {
                                                                         <div className="md:col-span-1 md:row-span-1 relative group min-h-[260px] md:min-h-0 rounded-[3rem] overflow-hidden border border-white/5 bg-linear-to-br from-purple-500/30 to-blue-500/10 backdrop-blur-3xl shadow-2xl">
                                                 <div className="absolute inset-0 p-10 flex flex-col justify-center items-center text-center">
                                                         <span className="text-white/40 text-sm mb-2 uppercase font-bold tracking-tight">Total Rewards</span>
-                                                        <h4 className="text-6xl font-black text-white tracking-tighter">$50K</h4>
+                                                        <h4 className="text-6xl font-black text-white tracking-tighter">$2K</h4>
                                                         <div className="mt-8 px-8 py-3 bg-white/5 rounded-full text-xs text-cyan-400 font-black border border-white/10 uppercase tracking-widest transition-colors hover:bg-white/10">Join Now</div>
                                                 </div>
                                         </div>

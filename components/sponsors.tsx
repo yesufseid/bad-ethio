@@ -41,7 +41,9 @@ export default function Sponsors() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-white/30 font-black tracking-[0.2em] uppercase text-[10px]">{sponsor.tier}</span>
+              <span className="text-white/30 font-black tracking-[0.2em] uppercase text-[10px]">{sponsor.name}
+              {/* .name instead of .tier currently */}
+              </span>
             </a>
           ))}
 

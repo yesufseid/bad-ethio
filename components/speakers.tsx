@@ -97,6 +97,15 @@ const speakers = [
     icon: Zap,
     tags: ["Founder", "DeFi"],
     color: "from-yellow-500/20 to-orange-500/20"
+  },
+  {
+    name: "Joanne Wendoh",
+    role: "Product Architect",
+    expertise: "Visionary technologist and systems builder designing human-centered AI and blockchain platforms that decentralize power and expand access. Founder and product architect focused on sustainable, long-term innovation in ownership, identity, and emerging tech ecosystems.",
+    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/1767705951639_e=1771459200&v=beta&t=waeFsaIuLJpIZcScnGazp0HLyY4CukrD1-BL7IxiNnE",
+    icon: Shield,
+    tags: ["AI", "Blockchain", "Identity"],
+    color: "from-blue-500/20 to-cyan-500/20"
   }
 ]
 

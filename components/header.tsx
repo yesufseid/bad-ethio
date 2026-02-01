@@ -105,8 +105,10 @@ export default function Header() {
                   size="sm"
                   className="h-8 md:h-10 px-4 md:px-6 rounded-full bg-white text-black hover:bg-neutral-200 font-black text-[8px] md:text-[10px] tracking-widest uppercase transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)] border-none"
                 >
-                  Register
-                  <ChevronRight size={8} className="ml-1 md:size-10" />
+                  <span className="pl-5">
+                    Register
+                  </span>
+                  <ChevronRight size={4} className="ml-1 md:size-10" />
                 </Button>
               </Link>
 

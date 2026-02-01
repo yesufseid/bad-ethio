@@ -136,8 +136,8 @@ export default function CommunityMarquee() {
                         </div>
 
                         {/* Side Gradients */}
-                        <div className="absolute inset-y-0 left-0 w-64 bg-linear-to-r from-background via-background/90 to-transparent z-10 pointer-events-none" />
-                        <div className="absolute inset-y-0 right-0 w-64 bg-linear-to-l from-background via-background/90 to-transparent z-10 pointer-events-none" />
+                        <div className="absolute inset-y-0 left-0 w-16 md:w-64 bg-linear-to-r from-background via-background/90 to-transparent z-10 pointer-events-none" />
+                        <div className="absolute inset-y-0 right-0 w-16 md:w-64 bg-linear-to-l from-background via-background/90 to-transparent z-10 pointer-events-none" />
                 </section>
         )
 }

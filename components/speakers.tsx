@@ -55,10 +55,10 @@ const speakers = [
   {
     name: "Mearaf Tadewos",
     role: "Product Engineer",
-    expertise: "Specializing in decentralized systems, complex frontend architecture, and high-quality UX. Mearaf is a builder at heart, pushing the boundaries of what's possible on blockchain.",
+    expertise: "A decentralized systems strategist, blockchain ecosystem analyst, and product-centric builder shaping the future of Web3 adoption and innovation. She blends technical expertise with strategic insight to help projects, communities, and markets unlock value and scale responsibly in the decentralized economy.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/mearaf%20tadewos-speaker?updatedAt=1769640970459",
     icon: Code,
-    tags: ["Fullstack", "UX Architecture"],
+    tags: ["Web3 Strategy", "Ecosystem Analyst"],
     color: "from-indigo-500/20 to-blue-500/20"
   },
   {

@@ -17,7 +17,7 @@ const registrationSchema = z
       ),
     phone: z
       .string()
-      .regex(/^\+251[1-9]\d{8}$/, "Enter a valid Ethiopian phone number."),
+      .regex(/^\+[1-9]\d{6,14}$/, "Enter a valid international phone number (e.g. +251...)."),
     university: z.string().min(1, "Select your university."),
     otherUniversity: z.string().optional(),
     department: z

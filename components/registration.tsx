@@ -31,7 +31,7 @@ import { registerAction } from "@/app/actions/register"
 const formSchema = z.object({
   fullName: z.string().regex(/^[A-Za-z\s\-']{3,100}$/, "Enter a valid name (3-100 characters)."),
   email: z.string().regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Enter a valid university email."),
-  phone: z.string().regex(/^\+251[1-9]\d{8}$/, "Enter a valid Ethiopian phone number (+251)."),
+  phone: z.string().regex(/^\+[1-9]\d{6,14}$/, "Enter a valid international phone number."),
   university: z.string().min(1, "Select your university."),
   otherUniversity: z.string().optional(),
   department: z.string().regex(/^[A-Za-z\s\-]{5,50}$/, "Enter a valid department (5-50 characters)."),
@@ -52,10 +52,29 @@ const formSchema = z.object({
     ctx.addIssue({ code: z.ZodIssueCode.custom, message: "Enter team name.", path: ["teamName"] })
   }
 })
+const countries = [
+  { name: "Ethiopia", code: "+251", flag: "🇪🇹" },
+  { name: "Kenya", code: "+254", flag: "🇰🇪" },
+  { name: "Rwanda", code: "+250", flag: "🇷🇼" },
+  { name: "Ghana", code: "+233", flag: "🇬🇭" },
+  { name: "Nigeria", code: "+234", flag: "🇳🇬" },
+  { name: "South Africa", code: "+27", flag: "🇿🇦" },
+  { name: "Uganda", code: "+256", flag: "🇺🇬" },
+  { name: "Tanzania", code: "+255", flag: "🇹🇿" },
+  { name: "Egypt", code: "+20", flag: "🇪🇬" },
+  { name: "USA", code: "+1", flag: "🇺🇸" },
+  { name: "UK", code: "+44", flag: "🇬🇧" },
+  { name: "Canada", code: "+1", flag: "🇨🇦" },
+  { name: "Germany", code: "+49", flag: "🇩🇪" },
+  { name: "France", code: "+33", flag: "🇫🇷" },
+  { name: "UAE", code: "+971", flag: "🇦🇪" },
+  { name: "India", code: "+91", flag: "🇮🇳" },
+]
 
 export default function Registration() {
   const [submitted, setSubmitted] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+251")
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -153,41 +172,59 @@ export default function Registration() {
                     />
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <FormField control={form.control} name="phone" render={({ field }) => (
-                      <FormItem className="space-y-2">
-                        <FormLabel className="text-neutral-500 uppercase text-[10px] font-black tracking-widest flex items-center gap-2">Phone</FormLabel>
-                        <FormControl>
-                          <Input {...field} className="bg-white/5 border-white/5 rounded-xl h-14 text-lg px-4 focus-visible:ring-1 focus-visible:ring-purple-500/50 transition-all" />
-                        </FormControl>
-                        <FormMessage className="text-xs text-red-500 font-bold" />
-                      </FormItem>
-                    )}
-                    />
-                    <FormField control={form.control} name="year" render={({ field }) => (
-                      <FormItem className="space-y-2">
-                        <FormLabel className="text-neutral-500 uppercase text-[10px] font-black tracking-widest">Enrollment Year</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormField control={form.control} name="phone" render={({ field }) => (
+                    <FormItem className="space-y-2">
+                      <FormLabel className="text-neutral-500 uppercase text-[10px] font-black tracking-widest flex items-center gap-2">Phone</FormLabel>
+                      <div className="flex gap-2">
+                        <Select
+                          value={selectedCountryCode}
+                          onValueChange={(val) => {
+                            const prevCode = selectedCountryCode;
+                            setSelectedCountryCode(val);
+                            // Update phone field by replacing the prefix
+                            const currentVal = field.value || "";
+                            const phoneWithoutPrefix = currentVal.startsWith(prevCode)
+                              ? currentVal.slice(prevCode.length)
+                              : currentVal.replace(/^\+[0-9]+/, "");
+                            field.onChange(val + phoneWithoutPrefix);
+                          }}
+                        >
                           <FormControl>
-                            <SelectTrigger className="bg-white/5 border-white/5 rounded-xl h-14 text-lg px-4 focus:ring-1 focus:ring-purple-500/50">
-                              <SelectValue placeholder="Select year" />
+                            <SelectTrigger className="w-[110px] bg-white/5 border-white/5 rounded-xl h-14 text-sm focus:ring-1 focus:ring-purple-500/50 flex gap-2 items-center justify-center">
+                              <div className="flex items-center gap-1.5 min-w-0 overflow-hidden">
+                                <span className="text-xl shrink-0">{countries.find(c => c.code === selectedCountryCode)?.flag || "🌍"}</span>
+                                <span className="font-bold shrink-0">{selectedCountryCode}</span>
+                              </div>
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent className="bg-neutral-900 border-white/10 text-white rounded-xl">
-                            <SelectItem value="1">1st Year</SelectItem>
-                            <SelectItem value="2">2nd Year</SelectItem>
-                            <SelectItem value="3">3rd Year</SelectItem>
-                            <SelectItem value="4">4th Year</SelectItem>
-                            <SelectItem value="5">5th Year</SelectItem>
-                            <SelectItem value="masters">Masters</SelectItem>
-                            <SelectItem value="phd">PhD</SelectItem>
+                          <SelectContent className="bg-neutral-900 border-white/10 text-white rounded-xl max-h-[300px] w-[240px]">
+                            {countries.map((c, idx) => (
+                              <SelectItem key={`${c.code}-${idx}`} value={c.code} className="hover:bg-white/5 focus:bg-white/5 transition-colors cursor-pointer py-3">
+                                <span className="flex items-center gap-3 w-full">
+                                  <span className="text-xl shrink-0">{c.flag}</span>
+                                  <span className="flex-1 font-bold text-sm tracking-tight">{c.name}</span>
+                                  <span className="text-neutral-500 text-[10px] font-black shrink-0">{c.code}</span>
+                                </span>
+                              </SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
-                        <FormMessage className="text-xs text-red-500 font-bold" />
-                      </FormItem>
-                    )}
-                    />
-                  </div>
+                        <FormControl className="flex-1">
+                          <Input
+                            placeholder="912..."
+                            value={field.value?.startsWith(selectedCountryCode) ? field.value.slice(selectedCountryCode.length) : field.value}
+                            onChange={(e) => {
+                              const val = e.target.value.replace(/[^0-9]/g, "");
+                              field.onChange(selectedCountryCode + val);
+                            }}
+                            className="bg-white/5 border-white/5 rounded-xl h-14 text-lg px-4 focus-visible:ring-1 focus-visible:ring-purple-500/50 transition-all"
+                          />
+                        </FormControl>
+                      </div>
+                      <FormMessage className="text-xs text-red-500 font-bold" />
+                    </FormItem>
+                  )}
+                  />
                 </div>
 
                 {/* Section: Academic */}
@@ -220,19 +257,42 @@ export default function Registration() {
                       </FormItem>
                     )}
                     />
-                    {university === "Other" && (
-                      <FormField control={form.control} name="otherUniversity" render={({ field }) => (
-                        <FormItem className="space-y-2">
-                          <FormLabel className="text-neutral-500 uppercase text-[10px] font-black tracking-widest">Enter Campus</FormLabel>
+                    <FormField control={form.control} name="year" render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-neutral-500 uppercase text-[10px] font-black tracking-widest">Enrollment Year</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <Input placeholder="University Name" {...field} className="bg-white/5 border-white/5 rounded-xl h-14 text-lg px-4 focus-visible:ring-1 focus-visible:ring-purple-500/50 transition-all" />
+                            <SelectTrigger className="bg-white/5 border-white/5 rounded-xl h-14 text-lg px-4 focus:ring-1 focus:ring-purple-500/50">
+                              <SelectValue placeholder="Select year" />
+                            </SelectTrigger>
                           </FormControl>
-                          <FormMessage className="text-xs text-red-500 font-bold" />
-                        </FormItem>
-                      )}
-                      />
+                          <SelectContent className="bg-neutral-900 border-white/10 text-white rounded-xl">
+                            <SelectItem value="1">1st Year</SelectItem>
+                            <SelectItem value="2">2nd Year</SelectItem>
+                            <SelectItem value="3">3rd Year</SelectItem>
+                            <SelectItem value="4">4th Year</SelectItem>
+                            <SelectItem value="5">5th Year</SelectItem>
+                            <SelectItem value="masters">Masters</SelectItem>
+                            <SelectItem value="phd">PhD</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage className="text-xs text-red-500 font-bold" />
+                      </FormItem>
                     )}
+                    />
                   </div>
+                  {university === "Other" && (
+                    <FormField control={form.control} name="otherUniversity" render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-neutral-500 uppercase text-[10px] font-black tracking-widest">Enter Campus</FormLabel>
+                        <FormControl>
+                          <Input placeholder="University Name" {...field} className="bg-white/5 border-white/5 rounded-xl h-14 text-lg px-4 focus-visible:ring-1 focus-visible:ring-purple-500/50 transition-all" />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 font-bold" />
+                      </FormItem>
+                    )}
+                    />
+                  )}
                   <FormField control={form.control} name="department" render={({ field }) => (
                     <FormItem className="space-y-2">
                       <FormLabel className="text-neutral-500 uppercase text-[10px] font-black tracking-widest">Major / Field</FormLabel>

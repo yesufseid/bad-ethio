@@ -95,7 +95,7 @@ const speakers = [
     expertise: "Creating decentralized applications and empowering African communities through on-chain innovation.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/1758712919721_e=1771459200&v=beta&t=4fwLZcCX4_W9cN-wn72DL8hjPRBK4YTpOwDzkBOoLgk",
     icon: Zap,
-    tags: ["Founder", "DeFi"],
+    tags: ["Founder", "DeFi", "base"],
     color: "from-yellow-500/20 to-orange-500/20"
   },
   {

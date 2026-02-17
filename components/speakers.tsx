@@ -70,15 +70,7 @@ const speakers = [
     tags: ["Data", "On-chain"],
     color: "from-purple-500/20 to-blue-500/20"
   },
-  {
-    name: "Kokeb Solomon",
-    role: "Community Builder",
-    expertise: "Contributing to Web3Clubs, ETHSafari, and AfricanOnChain to grow connected Web3 ecosystems.",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/koko?updatedAt=1769697954882",
-    icon: Users,
-    tags: ["Events", "Builder"],
-    color: "from-pink-500/20 to-red-500/20"
-  },
+
   {
     name: "Solene Daviaud",
     role: "Dev Educator",

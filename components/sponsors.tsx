@@ -10,6 +10,10 @@ const sponsors = [
   { name: "BuidlGuidl", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Main/BuidlGuidl?updatedAt=1769630659256", url: "https://buidlguidl.com/", tier: "Partner" },
 ]
 
+const mediaPartners = [
+  { name: "CoinGabbar", logo: "/Coin gabbar loog-Dark.svg", url: "https://www.coingabbar.com/" },
+]
+
 export default function Sponsors() {
   return (
     <section id="sponsors" className="py-40 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
@@ -42,7 +46,7 @@ export default function Sponsors() {
                 />
               </div>
               <span className="text-white/30 font-black tracking-[0.2em] uppercase text-[10px]">{sponsor.name}
-              {/* .name instead of .tier currently */}
+                {/* .name instead of .tier currently */}
               </span>
             </a>
           ))}
@@ -57,6 +61,34 @@ export default function Sponsors() {
             </div>
             <span className="text-white/40 font-black tracking-widest uppercase text-xs">Become a Sponsor</span>
           </a>
+        </div>
+
+        {/* Media Partners Section */}
+        <div className="text-center mt-32 mb-16 animate-fade-in">
+          <h3 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">
+            Our <span className="bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Media Partners</span>
+          </h3>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 justify-center max-w-4xl mx-auto">
+          {mediaPartners.map((partner, i) => (
+            <a
+              key={i}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center p-12 rounded-[2.5rem] border border-white/5 bg-neutral-900/30 backdrop-blur-3xl hover:bg-neutral-900/50 transition-all duration-500 group col-span-2 md:col-span-1 md:col-start-2"
+            >
+              <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 grayscale group-hover:grayscale-0 transition-all duration-700">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="text-white/30 font-black tracking-[0.2em] uppercase text-[10px]">{partner.name}</span>
+            </a>
+          ))}
         </div>
       </div>
     </section>

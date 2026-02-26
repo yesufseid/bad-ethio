@@ -12,6 +12,7 @@ import EventHighlights from "@/components/event-highlights"
 import SeasonRoadmap from "@/components/season-roadmap"
 import Timeline from "@/components/timeline"
 import Speakers from "@/components/speakers"
+import Tickets from "@/components/tickets"
 import Registration from "@/components/registration"
 import Sponsors from "@/components/sponsors"
 import SponsorshipDetails from "@/components/sponsorship-details"
@@ -24,6 +25,16 @@ export default function Home() {
     email: "",
     name: "",
   })
+  const [selectedTicket, setSelectedTicket] = useState<"standard" | "vip">("standard")
+  const [selectedTxHash, setSelectedTxHash] = useState<string>("")
+
+  const handleTicketSelect = (type: "standard" | "vip", txHash?: string) => {
+    setSelectedTicket(type)
+    setSelectedTxHash(txHash || "")
+    setTimeout(() => {
+      document.getElementById("register")?.scrollIntoView({ behavior: "smooth" })
+    }, 100)
+  }
 
   return (
     <main className="min-h-screen bg-black text-white selection:bg-purple-500/30">
@@ -71,7 +82,11 @@ export default function Home() {
       </RevealOnScroll>
 
       <RevealOnScroll>
-        <Registration />
+        <Tickets onSelectTicket={handleTicketSelect} />
+      </RevealOnScroll>
+
+      <RevealOnScroll>
+        <Registration ticketType={selectedTicket} txHash={selectedTxHash} />
       </RevealOnScroll>
 
       <RevealOnScroll>

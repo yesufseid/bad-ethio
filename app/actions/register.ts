@@ -13,7 +13,7 @@ const registrationSchema = z
       .string()
       .regex(
         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-        "Enter a valid university email.",
+        "Enter a valid email.",
       ),
     phone: z
       .string()
@@ -32,6 +32,8 @@ const registrationSchema = z
     agreement: z.boolean().refine((v) => v === true, "Agree to terms to proceed."),
     github: z.string().optional(),
     linkedin: z.string().optional(),
+    ticketType: z.enum(["standard", "vip"]).default("standard"),
+    txHash: z.string().optional(),
   })
   .superRefine((data, ctx) => {
     if (data.university === "Other") {
@@ -52,6 +54,14 @@ const registrationSchema = z
           path: ["teamName"],
         })
       }
+    }
+
+    if (data.ticketType === "vip" && (!data.txHash || data.txHash.trim().length < 10)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Paste your transaction hash to confirm VIP payment.",
+        path: ["txHash"],
+      })
     }
   })
 
@@ -84,6 +94,9 @@ export async function registerAction(input: unknown): Promise<RegisterResult> {
     agreement: data.agreement,
     github: data.github || null,
     linkedin: data.linkedin || null,
+    ticketType: data.ticketType,
+    txHash: data.txHash || null,
+    verified: false,
   })
 
   return { ok: true }

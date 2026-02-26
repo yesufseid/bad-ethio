@@ -33,7 +33,7 @@ const phases = [
         },
         {
                 season: "Season III",
-                period: "March 2026",
+                period: "March - April 2026",
                 title: "Peak Impact",
                 tagline: "Total Manifestation",
                 description: "The journey reaches its zenith. BlockFest is not just an event; it's the conversion. We take the early interest and transform it into 80+ validated products, curated talent pools, and absolute ROI for the ecosystem.",

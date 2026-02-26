@@ -32,7 +32,7 @@ export default function Hero() {
                 Blockfest
               </span>
               <span className="text-[8px] md:text-[10px] text-white/60 font-black tracking-[0.4em] uppercase mt-1 md:mt-2 transition-colors group-hover/logo:text-white">
-                Ethiopia 2026 • Mar 18-25
+                Ethiopia 2026 • Mar 25 - Apr 2
               </span>
             </div>
           </div>

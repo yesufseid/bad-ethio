@@ -1,4 +1,4 @@
-import { pgTable, serial, varchar, boolean, text } from 'drizzle-orm/pg-core';
+import { pgTable, serial, varchar, boolean, text, timestamp } from 'drizzle-orm/pg-core';
 
 export const registrations = pgTable('registrations', {
   id: serial('id').primaryKey(),
@@ -17,5 +17,8 @@ export const registrations = pgTable('registrations', {
   agreement: boolean('agreement').notNull(),
   github: varchar('github', { length: 200 }),
   linkedin: varchar('linkedin', { length: 200 }),
-  createdAt: text('created_at').default('now()'),
+  ticketType: varchar('ticket_type', { length: 10 }).default('standard'),
+  txHash: varchar('tx_hash', { length: 200 }),
+  verified: boolean('verified').default(false),
+  createdAt: timestamp('created_at').defaultNow(),
 });

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { ArrowRight, Loader2, User, Mail, Phone, GraduationCap, Github, Linkedin, CheckCircle2 } from "lucide-react"
+import { ArrowRight, Loader2, User, CheckCircle2, Crown, Zap } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -30,7 +30,7 @@ import { registerAction } from "@/app/actions/register"
 
 const formSchema = z.object({
   fullName: z.string().regex(/^[A-Za-z\s\-']{3,100}$/, "Enter a valid name (3-100 characters)."),
-  email: z.string().regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Enter a valid university email."),
+  email: z.string().regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Enter a valid email."),
   phone: z.string().regex(/^\+[1-9]\d{6,14}$/, "Enter a valid international phone number."),
   university: z.string().min(1, "Select your university."),
   otherUniversity: z.string().optional(),
@@ -44,6 +44,8 @@ const formSchema = z.object({
   agreement: z.boolean().refine((val) => val === true, "Agree to terms."),
   github: z.string().url("Enter a valid URL.").optional().or(z.literal("")),
   linkedin: z.string().url("Enter a valid URL.").optional().or(z.literal("")),
+  ticketType: z.enum(["standard", "vip"]).default("standard"),
+  txHash: z.string().optional(),
 }).superRefine((data, ctx) => {
   if (data.university === "Other" && (!data.otherUniversity || data.otherUniversity.length < 5)) {
     ctx.addIssue({ code: z.ZodIssueCode.custom, message: "Enter university name.", path: ["otherUniversity"] })
@@ -71,7 +73,12 @@ const countries = [
   { name: "India", code: "+91", flag: "🇮🇳" },
 ]
 
-export default function Registration() {
+interface RegistrationProps {
+  ticketType?: "standard" | "vip"
+  txHash?: string
+}
+
+export default function Registration({ ticketType = "standard", txHash = "" }: RegistrationProps) {
   const [submitted, setSubmitted] = useState(false)
   const [success, setSuccess] = useState(false)
   const [selectedCountryCode, setSelectedCountryCode] = useState("+251")
@@ -82,7 +89,9 @@ export default function Registration() {
       fullName: "", email: "", phone: "+251", university: "", otherUniversity: "",
       department: "", year: "", participationType: "solo", teamName: "",
       teamMember1: "", teamMember2: "", teamMember3: "", agreement: false,
-      github: "", linkedin: ""
+      github: "", linkedin: "",
+      ticketType,
+      txHash,
     },
   })
 
@@ -92,7 +101,7 @@ export default function Registration() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setSubmitted(true)
     try {
-      const result = await registerAction(values)
+      const result = await registerAction({ ...values, ticketType, txHash })
       if (!result.ok) throw new Error("message" in result ? result.message : "Submission failed")
       toast.success("Registration successful!")
       form.reset()
@@ -111,6 +120,18 @@ export default function Registration() {
 
       <div className="relative max-w-4xl mx-auto">
         <div className="mb-20 text-center">
+          {/* Ticket badge */}
+          {ticketType === "vip" ? (
+            <div className="inline-flex items-center gap-2 border border-amber-500/40 bg-amber-500/10 rounded-full px-4 py-2 w-fit mb-8">
+              <Crown size={14} className="text-amber-400" />
+              <span className="text-sm font-black text-amber-400 uppercase tracking-widest">VIP Pass Selected</span>
+            </div>
+          ) : (
+            <div className="inline-flex items-center gap-2 border border-purple-500/30 bg-purple-500/10 rounded-full px-4 py-2 w-fit mb-8">
+              <Zap size={14} className="text-purple-400" />
+              <span className="text-sm font-black text-purple-400 uppercase tracking-widest">Standard Pass Selected</span>
+            </div>
+          )}
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-none animate-slide-up">
             Start your <span className="bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent italic">Journey.</span>
           </h2>

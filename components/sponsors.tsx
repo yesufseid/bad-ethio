@@ -11,7 +11,7 @@ const sponsors = [
 ]
 
 const mediaPartners = [
-  { name: "CoinGabbar", logo: "/Coin gabbar loog-Dark.svg", url: "https://www.coingabbar.com/" },
+  { name: "CoinGabbar", logo: "/Coin Gabbar logo-light.svg", url: "https://www.coingabbar.com/" },
 ]
 
 export default function Sponsors() {

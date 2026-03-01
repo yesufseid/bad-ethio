@@ -38,7 +38,7 @@ export default function Header() {
     { label: "Community", href: "#community" },
     { label: "About", href: "#about" },
     { label: "Event", href: "#event" },
-    { label: "Partnership", href: "#partnership" },
+    { label: "Partners", href: "#partners" },
     { label: "Speakers", href: "#speakers" },
     { label: "FAQ", href: "#faq" },
   ]

@@ -15,7 +15,6 @@ import Speakers from "@/components/speakers"
 import Tickets from "@/components/tickets"
 import Registration from "@/components/registration"
 import Sponsors from "@/components/sponsors"
-import SponsorshipDetails from "@/components/sponsorship-details"
 import FAQ from "@/components/faq"
 import Footer from "@/components/footer"
 import { InteractiveCanvas, ScrollProgress, RevealOnScroll } from "@/components/visual-effects"
@@ -89,9 +88,6 @@ export default function Home() {
         <Registration ticketType={selectedTicket} txHash={selectedTxHash} />
       </RevealOnScroll>
 
-      <RevealOnScroll>
-        <SponsorshipDetails />
-      </RevealOnScroll>
 
       <RevealOnScroll>
         <Sponsors />

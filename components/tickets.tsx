@@ -4,6 +4,13 @@ import { useState } from "react"
 import { Check, Copy, Zap, Star, X, ExternalLink, Shield, Crown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
+import {
+        Dialog,
+        DialogContent,
+        DialogHeader,
+        DialogTitle,
+        DialogDescription,
+} from "@/components/ui/dialog"
 
 const WALLETS = {
         evm: {
@@ -73,9 +80,11 @@ function CopyButton({ text }: { text: string }) {
 }
 
 function PaymentModal({
+        isOpen,
         onClose,
         onConfirm,
 }: {
+        isOpen: boolean
         onClose: () => void
         onConfirm: (txHash: string) => void
 }) {
@@ -91,32 +100,22 @@ function PaymentModal({
         }
 
         return (
-                <div
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-                        style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(12px)" }}
-                >
-                        <div className="relative w-full max-w-lg bg-neutral-950 border border-amber-500/20 rounded-3xl p-8 shadow-2xl animate-fade-in overflow-y-auto max-h-[90vh]">
-                                {/* Close */}
-                                <button
-                                        onClick={onClose}
-                                        className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 transition-all"
-                                >
-                                        <X size={16} className="text-neutral-400" />
-                                </button>
-
-                                {/* Header */}
-                                <div className="flex items-center gap-3 mb-8">
-                                        <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-                                                <Crown size={18} className="text-amber-400" />
+                <Dialog open={isOpen} onOpenChange={onClose}>
+                        <DialogContent className="sm:max-w-lg w-[calc(100%-2rem)] bg-neutral-950 border border-amber-500/20 rounded-3xl p-4 sm:p-8 shadow-2xl overflow-y-auto overflow-x-hidden max-h-[90vh] custom-scrollbar">
+                                <DialogHeader className="flex flex-row items-center gap-4 space-y-0">
+                                        <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center shrink-0">
+                                                <Crown size={24} className="text-amber-400" />
                                         </div>
-                                        <div>
-                                                <h3 className="text-xl font-black text-white tracking-tight">VIP Payment</h3>
-                                                <p className="text-neutral-500 text-sm font-medium">Send $200 equivalent to any wallet below</p>
+                                        <div className="flex flex-col gap-1">
+                                                <DialogTitle className="text-2xl font-black text-white tracking-tight">VIP Payment</DialogTitle>
+                                                <DialogDescription className="text-neutral-500 text-sm font-medium">
+                                                        Send $200 equivalent to any wallet below
+                                                </DialogDescription>
                                         </div>
-                                </div>
+                                </DialogHeader>
 
                                 {/* Wallets */}
-                                <div className="space-y-3 mb-8">
+                                <div className="space-y-3 mb-4 mt-4">
                                         {Object.values(WALLETS).map((w) => (
                                                 <div
                                                         key={w.label}
@@ -174,8 +173,8 @@ function PaymentModal({
                                 >
                                         I've Paid — Proceed to Register
                                 </Button>
-                        </div>
-                </div>
+                        </DialogContent>
+                </Dialog>
         )
 }
 
@@ -190,6 +189,13 @@ export default function Tickets({ onSelectTicket }: TicketsProps) {
 
         return (
                 <section id="tickets" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+                        {showModal && (
+                                <PaymentModal
+                                        isOpen={showModal}
+                                        onClose={() => setShowModal(false)}
+                                        onConfirm={handleVipConfirm}
+                                />
+                        )}
                         {/* Background glows */}
                         <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-purple-500/4 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
                         <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-amber-500/4 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
@@ -199,7 +205,7 @@ export default function Tickets({ onSelectTicket }: TicketsProps) {
                                 <div className="mb-20 text-center">
                                         <p className="text-purple-400/80 text-xs font-black uppercase tracking-[0.3em] mb-4">Access Tiers</p>
                                         <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-none">
-                                                Choose your <span className="bg-linear-to-r from-purple-400 to-amber-400 bg-clip-text text-transparent italic">pass.</span>
+                                                Choose your <span className="bg-linear-to-r from-purple-400 to-amber-400 bg-clip-text text-transparent italic pr-8 inline-block">pass.</span>
                                         </h2>
                                         <p className="text-neutral-400 text-lg font-light max-w-xl mx-auto">
                                                 Open access for builders. Premium access for ecosystem leaders.
@@ -319,6 +325,7 @@ export default function Tickets({ onSelectTicket }: TicketsProps) {
 
                         {showModal && (
                                 <PaymentModal
+                                        isOpen={showModal}
                                         onClose={() => setShowModal(false)}
                                         onConfirm={handleVipConfirm}
                                 />

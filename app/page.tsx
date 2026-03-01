@@ -18,6 +18,8 @@ import Sponsors from "@/components/sponsors"
 import FAQ from "@/components/faq"
 import Footer from "@/components/footer"
 import { InteractiveCanvas, ScrollProgress, RevealOnScroll } from "@/components/visual-effects"
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -26,13 +28,12 @@ export default function Home() {
   })
   const [selectedTicket, setSelectedTicket] = useState<"standard" | "vip">("standard")
   const [selectedTxHash, setSelectedTxHash] = useState<string>("")
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false)
 
   const handleTicketSelect = (type: "standard" | "vip", txHash?: string) => {
     setSelectedTicket(type)
     setSelectedTxHash(txHash || "")
-    setTimeout(() => {
-      document.getElementById("register")?.scrollIntoView({ behavior: "smooth" })
-    }, 100)
+    setIsRegistrationOpen(true)
   }
 
   return (
@@ -84,10 +85,12 @@ export default function Home() {
         <Tickets onSelectTicket={handleTicketSelect} />
       </RevealOnScroll>
 
-      <RevealOnScroll>
-        <Registration ticketType={selectedTicket} txHash={selectedTxHash} />
-      </RevealOnScroll>
-
+      <RegistrationModal
+        isOpen={isRegistrationOpen}
+        onClose={() => setIsRegistrationOpen(false)}
+        ticketType={selectedTicket}
+        txHash={selectedTxHash}
+      />
 
       <RevealOnScroll>
         <Sponsors />
@@ -99,5 +102,40 @@ export default function Home() {
 
       <Footer />
     </main>
+  )
+}
+
+function RegistrationModal({
+  isOpen,
+  onClose,
+  ticketType,
+  txHash
+}: {
+  isOpen: boolean
+  onClose: () => void
+  ticketType: "standard" | "vip"
+  txHash: string
+}) {
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="sm:max-w-xl w-[calc(100%-2rem)] p-0 bg-transparent border-none overflow-hidden max-h-[95vh] custom-scrollbar gap-0!">
+        <VisuallyHidden>
+          <DialogTitle>Registration Form</DialogTitle>
+          <DialogDescription>
+            Complete your registration for the Web3 community in Ethiopia.
+          </DialogDescription>
+        </VisuallyHidden>
+        <div className="w-full overflow-x-hidden">
+          <Registration
+            ticketType={ticketType}
+            txHash={txHash}
+            isModal={true}
+            onSuccess={() => {
+              // Optional: close modal on success after a delay
+            }}
+          />
+        </div>
+      </DialogContent>
+    </Dialog>
   )
 }

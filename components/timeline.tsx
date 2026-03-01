@@ -5,56 +5,56 @@ import Image from "next/image"
 
 const events = [
   {
-    time: "March 18",
+    time: "March 25",
     title: "Opening & Alignment",
     description: "Opening ceremony, ecosystem vision, and expectations. Brand association with national Web3 initiative.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp_5.jpg",
     value: "National Visibility"
   },
   {
-    time: "March 19",
+    time: "March 26",
     title: "Team Formation & Ideation",
     description: "Team formation, ideation sprints, and workshops. Early exposure to top student builders.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/Avalanche_3.jpg",
     value: "Talent Discovery"
   },
   {
-    time: "March 20",
+    time: "March 27",
     title: "Hackathon Kickoff",
     description: "Intense hacking begins with focused workshops. Hands-on protocol engagement for builders.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/pizza_party_2.jpg",
     value: "Protocol Integration"
   },
   {
-    time: "March 21",
+    time: "March 28",
     title: "Build Phase",
     description: "Active development with 24/7 technical support and mentor guidance. Real product engineering.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp.jpg",
     value: "Product Development"
   },
   {
-    time: "March 22",
+    time: "March 29",
     title: "Final Submission",
     description: "Code freeze and pitch preparation. Culmination of technical development with measurable deliverables.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/Avalanche_session.jpg",
     value: "Measurable ROI"
   },
   {
-    time: "March 23",
+    time: "March 30",
     title: "Internal Demo Day",
     description: "Technical demos and mentor review. Shortlisting the top 10 projects from the cohort.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_18_2026-01-25_22-34-06.jpg?updatedAt=1769371906138",
     value: "Curated Deal Flow"
   },
   {
-    time: "March 24",
+    time: "March 31",
     title: "Conference Preparation",
     description: "Demo polish, storytelling, and stage preparation for the main stage presentation.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/bootcamp_4.jpg",
     value: "Storytelling"
   },
   {
-    time: "March 25",
+    time: "April 1",
     title: "Conference & Awards",
     description: "Top 10 demos on the main stage, keynotes, panels, and award ceremony. Thought leadership visibility.",
     image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/photo_14_2026-01-25_22-37-31.jpg",

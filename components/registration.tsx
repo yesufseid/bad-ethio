@@ -141,7 +141,7 @@ export default function Registration({
           Start your <span className="bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent italic">Journey.</span>
         </h2>
         <p className={cn("text-neutral-400 font-light tracking-tight animate-fade-in", isModal ? "text-xs" : "text-lg md:text-xl")}>
-          Join the largest Web3 community in Ethiopia.
+          Join the largest builders community.
         </p>
       </div>
 

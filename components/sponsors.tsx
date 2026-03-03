@@ -209,7 +209,7 @@ export default function Sponsors() {
             <div className="relative p-12 md:p-20 rounded-[4rem] border border-dashed border-white/10 bg-white/5 flex flex-col items-center text-center gap-8">
               <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter">Want to build with us?</h3>
               <p className="text-foreground/40 text-lg font-light max-w-xl">
-                Join our network of partners and help shape the future of Web3 in Ethiopia.
+                Join our network of partners and help shape the future of Web3.
               </p>
               <a
                 href="mailto:ethiopiabad@gmail.com?subject=Partnership Inquiry"

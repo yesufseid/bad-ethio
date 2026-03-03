@@ -122,7 +122,7 @@ function RegistrationModal({
         <VisuallyHidden>
           <DialogTitle>Registration Form</DialogTitle>
           <DialogDescription>
-            Complete your registration for the Web3 community in Ethiopia.
+            Complete your registration to join the community.
           </DialogDescription>
         </VisuallyHidden>
         <div className="w-full overflow-x-hidden">

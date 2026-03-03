@@ -49,7 +49,6 @@ export const partnerCategories = [
                         { name: "Kesse Events", logo: "https://res.cloudinary.com/dsbgn7nz8/image/upload/v1772392821/230134141_1923304521161382_7718793576982467601_n.jpg_t8il97.jpg", website: "https://www.instagram.com/kese_events/" },
                         { name: "Dev3Pack", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Main/Dev3pack?updatedAt=1769629592797", website: "https://dev3pack.xyz/" },
                         { name: "GIDA", logo: "/GIDA-05.png", website: "https://www.gida.academy/" },
-                        { name: "Web3 Ethiopia", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Main/web3-ethiopia?updatedAt=1769628826313", website: "https://x.com/Web3Ethiopia" },
                 ]
         },
         {

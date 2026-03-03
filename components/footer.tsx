@@ -24,7 +24,7 @@ export default function Footer() {
               <h2 className="text-4xl font-black text-white tracking-tighter italic">BLOCKFEST</h2>
             </div>
             <p className="text-foreground/70 text-xl font-light leading-relaxed max-w-sm mb-12">
-              The bridge between Web2 talent and the global Web3 ecosystem. Building the decentralized future of Ethiopia.
+              The bridge between Web2 talent and the global Web3 ecosystem. Building the decentralized future together.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="https://t.me/BaDEthiopia" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#229ED9] hover:border-[#229ED9] transition-all cursor-pointer group shadow-lg hover:shadow-[#229ED9]/20">

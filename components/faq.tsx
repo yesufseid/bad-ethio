@@ -11,11 +11,11 @@ import Image from "next/image"
 const faqs = [
   {
     question: "What is Blockfest Ethiopia?",
-    answer: "Blockfest is Ethiopia's premier Web3 ecosystem-building initiative, bringing together developers, builders, and visionaries to shape the decentralized future through hackathons and high-intensity community events."
+    answer: "Blockfest is a premier ecosystem-building initiative in Ethiopia, bringing together developers, builders, and visionaries to shape the decentralized future through hackathons and high-intensity community events."
   },
   {
     question: "Who can participate?",
-    answer: "Any developer, student, or innovator interested in Web3. We are university-first but open to all who want to build the decentralized future of Ethiopia."
+    answer: "Any developer, student, or innovator interested in Web3. We are university-first but open to all who want to build the decentralized future."
   },
   {
     question: "Is there a registration fee?",

@@ -483,7 +483,7 @@ export default function Registration({
   }
 
   return (
-    <section id="register" className="py-32 px-4 sm:px-6 lg:px-8 bg-neutral-950 relative overflow-hidden">
+    <section id="registration-form" className="py-32 px-4 sm:px-6 lg:px-8 bg-neutral-950 relative overflow-hidden">
       {content}
       {registrationContent}
     </section>

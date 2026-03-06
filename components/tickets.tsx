@@ -188,7 +188,7 @@ export default function Tickets({ onSelectTicket }: TicketsProps) {
         }
 
         return (
-                <section id="tickets" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+                <section id="register" className="scroll-mt-24 py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
                         {showModal && (
                                 <PaymentModal
                                         isOpen={showModal}

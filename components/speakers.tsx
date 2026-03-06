@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import Image from "next/image"
 import { RevealOnScroll } from "./visual-effects"
-import { X, Cpu, Globe, Zap, Users, Shield, Code, TrendingUp, Presentation } from "lucide-react"
+import { X, Cpu, Globe, Zap, Users, Shield, TrendingUp, Presentation } from "lucide-react"
 
 const speakers = [
   {
@@ -51,15 +51,6 @@ const speakers = [
     icon: Users,
     tags: ["DAO Ops", "Governance"],
     color: "from-green-500/20 to-teal-500/20"
-  },
-  {
-    name: "Mearaf Tadewos",
-    role: "Product Engineer",
-    expertise: "A decentralized systems strategist, blockchain ecosystem analyst, and product-centric builder shaping the future of Web3 adoption and innovation. She blends technical expertise with strategic insight to help projects, communities, and markets unlock value and scale responsibly in the decentralized economy.",
-    image: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/mearaf%20tadewos-speaker?updatedAt=1769640970459",
-    icon: Code,
-    tags: ["Web3 Strategy", "Ecosystem Analyst"],
-    color: "from-indigo-500/20 to-blue-500/20"
   },
   {
     name: "Dawit Mengistu",

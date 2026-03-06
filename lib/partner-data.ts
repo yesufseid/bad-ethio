@@ -45,7 +45,6 @@ export const partnerCategories = [
                 partners: [
                         { name: "Ethiopia Blockchain Week", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Main/Ethiiopia-Blockchain-Week?updatedAt=1769630567129", website: "https://etbw.online/" },
                         { name: "Ethiopia Blockchain Network", logo: "https://res.cloudinary.com/dsbgn7nz8/image/upload/v1772391865/images_aqppna.jpg", website: "https://x.com/EBnetwork3" },
-                        { name: "ETHiopia Residency", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Ethiopia/ETHiopia%20Residency.jpg?updatedAt=1769691633379" },
                         { name: "Kesse Events", logo: "https://res.cloudinary.com/dsbgn7nz8/image/upload/v1772392821/230134141_1923304521161382_7718793576982467601_n.jpg_t8il97.jpg", website: "https://www.instagram.com/kese_events/" },
                         { name: "Dev3Pack", logo: "https://ik.imagekit.io/kalkidanyishak/BaD_Main/Dev3pack?updatedAt=1769629592797", website: "https://dev3pack.xyz/" },
                         { name: "GIDA", logo: "/GIDA-05.png", website: "https://www.gida.academy/" },

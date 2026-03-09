@@ -26,7 +26,6 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { toast } from "sonner"
-import { registerAction } from "@/app/actions/register"
 import { cn } from "@/lib/utils"
 
 const formSchema = z.object({
@@ -109,8 +108,17 @@ export default function Registration({
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setSubmitted(true)
     try {
-      const result = await registerAction({ ...values, ticketType, txHash })
-      if (!result.ok) throw new Error("message" in result ? result.message : "Submission failed")
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...values, ticketType, txHash }),
+      })
+
+      const result = await response.json()
+      if (!response.ok) throw new Error(result.error || "Submission failed")
+
       toast.success("Registration successful!")
       form.reset()
       setSuccess(true)

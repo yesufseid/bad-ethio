@@ -25,9 +25,6 @@ export async function POST(req: NextRequest) {
       agreement: data.agreement,
       github: data.github || null,
       linkedin: data.linkedin || null,
-      ticketType: data.ticketType || 'standard',
-      txHash: data.txHash || null,
-      verified: false,
     });
     return NextResponse.json({ success: true });
   } catch (e) {

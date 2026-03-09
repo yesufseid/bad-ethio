@@ -15,7 +15,7 @@ function makeSessionToken(): string {
 }
 
 export async function adminLoginAction(password: string): Promise<{ error?: string }> {
-        const expected = process.env.ADMIN_PASSWORD_HASH?.trim()
+        const expected = process.env.ADMIN_PASSWORD_HASH?.trim() || hashPassword("admin123") // Default password is "admin123" if not set
         if (!expected) return { error: "Admin not configured." }
 
         if (hashPassword(password) !== expected) {

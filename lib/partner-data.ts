@@ -36,7 +36,7 @@ export const partnerCategories = [
                         { name: "Adama Science and Technology University", logo: "https://res.cloudinary.com/dsbgn7nz8/image/upload/v1772387834/images_c8y7y0.png", website: "https://www.astu.edu.et/" },
                         { name: "GDG Addis", logo: "https://res.cloudinary.com/dsbgn7nz8/image/upload/v1772387894/Copy_20of_20GDGAddis_20_20Ethiotelecom_20-_20Telebirr_20presentation_ZJnGO1h_jhxdin.png", website: "https://gdg.community.dev/gdg-addis/" },
                         { name: "GDG AASTU", logo: "https://res.cloudinary.com/dsbgn7nz8/image/upload/v1772387971/gdsc_aastu_logo_vdkovf.jpg", website: "https://gdg.community.dev/gdg-on-campus-addis-ababa-science-and-technology-university-addis-ababa-ethiopia/" },
-                        { name: "CSEC ASTU", logo: "https://res.cloudinary.com/dsbgn7nz8/image/upload/v1772388062/FfF79fAl_400x400_tflboy.jpg", website: "https://csec-landing-page.vercel.app/" },
+                        { name: "CSEC ASTU", logo: "/CSEC-ASTU%20BLOCKCHAIN%20LOGO.png", website: "https://csec-landing-page.vercel.app/" },
                         { name: "CGI AASTU", logo: "https://res.cloudinary.com/dsbgn7nz8/image/upload/v1772388124/images_bcwrzv.jpg", website: "https://www.linkedin.com/company/cgi-aastu/?originalSubdomain=gdg-on-campus-addis-ababa-science-and-technology-university-addis-ababa-ethiopia" }
                 ]
         },

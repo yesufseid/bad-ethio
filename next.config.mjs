@@ -3,6 +3,11 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    serverActions: {
+      allowedOrigins: ['blockfest.bad.et', '*.blockfest.bad.et'],
+    },
+  },
   images: {
     remotePatterns: [
       {

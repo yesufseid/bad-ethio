@@ -22,15 +22,15 @@ export default function ExecutiveSummary() {
                                                         <div className="flex flex-col gap-4 border-l border-white/10 pl-8">
                                                                 <div>
                                                                         <p className="text-xs font-black uppercase tracking-widest text-white/30 mb-1">Season Duration</p>
-                                                                        <p className="text-xl font-bold text-white">Jan – April 2026</p>
+                                                                        <p className="text-xl font-bold text-white">May 13 – May 20, 2026</p>
                                                                 </div>
                                                                 <div>
                                                                         <p className="text-xs font-black uppercase tracking-widest text-white/30 mb-1">BlockFest Dates</p>
-                                                                        <p className="text-xl font-bold text-purple-400">March 25 – April 2, 2026</p>
+                                                                        <p className="text-xl font-bold text-purple-400">May 13 – May 20, 2026</p>
                                                                 </div>
                                                                 <div>
                                                                         <p className="text-xs font-black uppercase tracking-widest text-white/30 mb-1">HS Blockchain Tour</p>
-                                                                        <p className="text-xl font-bold text-cyan-400">Feb 23 – 25, 2026</p>
+                                                                        <p className="text-xl font-bold text-cyan-400">May 13 – May 20, 2026</p>
                                                                 </div>
                                                         </div>
                                                 </div>

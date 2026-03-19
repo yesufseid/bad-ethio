@@ -8,9 +8,9 @@ const phases = [
         {
                 season: "Season I",
                 title: "Genesis",
-                period: "January 2026",
+                period: "May 13 - 15, 2026",
                 tagline: "The Seed of Intent",
-                description: "In the silence of January, we plant the seeds. This is the phase of deep architecture, where we align the core team, define our OKRs, and sculpt the technical foundations that will support hundreds of builders.",
+                description: "In the first days of the week, we plant the seeds. This is the phase of deep architecture, where we align the core team, define our OKRs, and sculpt the technical foundations that will support hundreds of builders.",
                 color: "from-purple-500/40 to-transparent",
                 glow: "bg-purple-900/30",
                 dots: "bg-purple-400",
@@ -19,21 +19,21 @@ const phases = [
         {
                 season: "Season II",
                 title: "The Surge",
-                period: "February 2026",
+                period: "May 16 - 18, 2026",
                 tagline: "Kinetic Momentum",
-                description: "The energy shifts. February is about the High School Blockchain Tour—our first major pulse. We lock in partners, prime the speakers, and ignite the community to transition from theory into raw kinetic energy.",
+                description: "The energy shifts. Midweek is about the High School Blockchain Tour, our first major pulse. We lock in partners, prime the speakers, and ignite the community to transition from theory into raw kinetic energy.",
                 color: "from-cyan-500/40 to-transparent",
                 glow: "bg-cyan-900/30",
                 dots: "bg-cyan-400",
                 highlight: {
-                        date: "Feb 23-25",
+                        date: "May 16-18",
                         label: "The Breakthrough: HS Tour"
                 },
                 outputs: ["Partner Lock-in", "Community Ignited", "HS Talent Captured"]
         },
         {
                 season: "Season III",
-                period: "March - April 2026",
+                period: "May 13 - May 20, 2026",
                 title: "Peak Impact",
                 tagline: "Total Manifestation",
                 description: "The journey reaches its zenith. BlockFest is not just an event; it's the conversion. We take the early interest and transform it into 80+ validated products, curated talent pools, and absolute ROI for the ecosystem.",
